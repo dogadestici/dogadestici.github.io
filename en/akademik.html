@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic - Doğa Destici</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .academic-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 80px;
+      }
+      .academic-card {
+        flex: 1 1 300px;
+        max-width: 380px;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .academic-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .card-bg-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+      }
+      .card-body {
+        padding: 25px;
+        background: var(--gray-color);
+        border: 2px solid var(--primary-accent);
+        border-top: none;
+        transition: background 0.2s, border-color 0.2s;
+      }
+      .card-body h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: var(--primary-accent);
+      }
+      .card-body p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--supportive-text-color);
+      }
+      .quote-text {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        font-size: 1.2rem;
+      }
+
+      body.dark-mode .card-body {
+        background: #1a1a1a !important;
+        border-color: #ffffff !important;
+      }
+      body.dark-mode .card-body h3,
+      body.dark-mode .card-body p,
+      body.dark-mode .quote-text {
+        color: #ffffff !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="index.html" class="logo">DOĞA DESTİCİ</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="akademik.html" class="nav-link active">Academic</a></li>
+              <li class="nav-item"><a href="sosyal.html" class="nav-link">Social</a></li>
+              <li class="nav-item"><a href="gezi.html" class="nav-link">Travel</a></li>
+              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+              <li class="nav-item"><a href="mailto:dogadestici@gmail.com" class="nav-link">Contact</a></li>
+              <li class="nav-item">
+                <a href="../akademik.html" class="nav-link">🇹🇷TR</a>
+              </li> 
+              <li class="nav-item">
+                <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="about" style="padding-top: 140px; padding-bottom: 0;">
+      <div class="container">
+        <div class="about-title">
+          <h2 class="title" style="margin-bottom: 15px;">Academic Work</h2>
+          <p class="quote-text">
+            "The book of nature is written in the language of mathematics." 
+            <br>
+            - Galileo
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="academic-row">
+        <a href="academic-info.html" class="academic-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="../img/works/erasmus.jpg" alt="About Me & Vision" class="card-bg-img" onerror="this.src='../img/works/overleaf.jpeg'" />
+          <div class="card-body">
+            <h3>About Me & Vision</h3>
+            <p>Academic goals, test scores, curriculum, and Erasmus+ experiences at Masaryk University.</p>
+          </div>
+        </a>
+
+        <a href="academic-projects.html" class="academic-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="../img/works/overleaf.jpeg" alt="Current Research" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Current Research & Links</h3>
+            <p>Independent research, active projects, general notes, and seminar materials.</p>
+          </div>
+        </a>
+      
+        <a href="academic-tools.html" class="academic-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="../img/works/tool.jpg" alt="Research Tools" class="card-bg-img" onerror="this.src='../img/works/overleaf.jpeg'" />
+          <div class="card-body">
+            <h3>Research Tools & Resources</h3>
+            <p>Core tools, software, and digital academic resources used in my research.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      AOS.init();
+
+      (function() {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        if (!toggleBtn) return;
+
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          toggleBtn.textContent = '◒ LIGHT';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          const isDark = document.body.classList.contains('dark-mode');
+          localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+          toggleBtn.textContent = isDark ? '◒ LIGHT' : '◑ MODE';
+        });
+      })();
+    </script>
+  </body>
+</html>

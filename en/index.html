@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOĞA DESTİCİ</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="index.html" class="logo" data-aos="fade-down" data-aos-duration="1000">DOĞA DESTİCİ</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list" data-aos="fade-down" data-aos-duration="1000">
+              <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+              <li class="nav-item"><a href="akademik.html" class="nav-link">Academic</a></li>
+              <li class="nav-item"><a href="sosyal.html" class="nav-link">Social</a></li>
+              <li class="nav-item"><a href="gezi.html" class="nav-link">Travel</a></li>
+              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+              <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+              <li class="nav-item">
+                <a href="../index.html" class="nav-link">🇹🇷TR</a>
+              </li> 
+              <li class="nav-item">
+                <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" style="padding-top: 200px; padding-bottom: 80px; display: flex; justify-content: center; align-items: center; text-align: center;">
+      <div class="container">
+        <div class="hero-row" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+          
+          <div class="hero-content" style="max-width: 900px; margin: 0 auto; width: 100%;">
+            <span class="hero-greeting" style="display: block; margin-bottom: 10px;">Hello, I'm</span>
+            <h1 class="hero-heading" style="margin: 10px 0; font-weight: bold;">DOĞA DESTİCİ</h1>
+            <span class="hero-heading-subtitle" style="display: block; margin-top: 15px; font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;">Student, Mathematician, Independent Researcher, Traveler</span>
+          </div>
+        
+          <div class="hero-img" style="display: flex; justify-content: center; align-items: center; margin: 40px auto 0 auto; width: 100%; max-width: 1500px; padding: 0 20px;">
+            <img src="../img/hero/pp.JPEG" alt="Doğa Destici Profile Photo" style="display: block; width: 100%; max-width: 1500px; height: auto; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); object-fit: cover;" />
+          </div>
+
+          <div class="about-social-list" style="margin-top: 40px;">
+            <div class="social-links-row" style="display: flex; justify-content: center; align-items: center; gap: 25px;">
+              <a href="https://www.linkedin.com/in/do%C4%9Fa-destici-2a244725b/?locale=tr" target="_blank"><img src="../img/social_icons/linkedin.svg" alt="LinkedIn" /></a>
+              <a href="https://www.instagram.com/thedoogaa/" target="_blank"><img src="../img/social_icons/instagram.svg" alt="Instagram" /></a>
+            </div>
+          </div> 
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-title">
+          <h2 class="title">About Me</h2>
+        </div>
+        <div class="about-row">
+          <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
+            <p class="about-descr">
+              I am a senior mathematics student at Ankara University. While conducting independent research on spacetime geometry and black holes, I actively travel the world and stay involved in the student music community. I view science as a form of art and strive to dedicate my life to both.
+            </p>
+            <div class="about-download-btn" style="display: flex; justify-content: center; align-items: center;">
+              <div class="cv-dropdown" style="position: relative; display: inline-block;">
+                <button class="btn btn-white" onclick="toggleCvMenu(event)" style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  View My CV 
+                  <span style="font-size: 0.8rem;">▼</span>
+                </button>
+                
+                <div id="cvDropdownMenu" class="cv-dropdown-menu">
+                  <a href="https://drive.google.com/file/d/17gVfEeNXoBmw6GKOwy9CIbMGCjMuquDJ/view?usp=sharing" target="_blank" class="cv-dropdown-item">
+                    Turkish CV
+                  </a>
+                  <div class="cv-dropdown-divider"></div>
+                  <a href="https://drive.google.com/file/d/13jMR71P9kh7pW5bKEUZEBKrkO-6mC1J0/view?usp=sharing" target="_blank" class="cv-dropdown-item">
+                    English CV
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="worlds" class="projects">
+      <div class="container container-lg">
+        <div class="projects-title">
+          <h2 class="title">What I Do</h2>
+        </div>
+
+        <div class="projects-row">
+          <div class="project-box" data-aos="fade-up" data-aos-duration="1000">
+            <a href="akademik.html">
+              <img class="project-img" src="../img/works/academia.jpg" alt="Academic" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Academic</h5>
+                  <p class="white">Research & Academic Goals</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <a href="sosyal.html">
+              <img class="project-img" src="../img/works/music.jpg" alt="Social" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Social</h5>
+                  <p class="white">Music & Ankarock</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <a href="gezi.html">
+              <img class="project-img" src="../img/works/gezi.jpeg" alt="Travel" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Travels</h5>
+                  <p class="white">Travel Notes & Routes</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <a href="blog.html">
+              <img class="project-img" src="../img/works/blog.jpeg" alt="Blog" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Blog</h5>
+                  <p class="white">Study Methods, Software & More</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-title">
+          <h2 class="title">Contact</h2>
+        </div>
+        <div class="contact-content">
+          <p>Feel free to reach out for research collaboration, projects, or just to get in touch.</p>
+        </div>
+
+        <form action="https://formspree.io/f/xrenkkpz" method="POST" class="contactForm" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="input-box">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="email" name="_replyto" placeholder="Email Address" required />
+          </div>
+          <textarea name="message" cols="30" rows="10" placeholder="Your message..." required></textarea>
+          
+          <div class="contact-button" data-aos="fade-zoom-in" data-aos-duration="1000" data-aos-delay="300">
+            <button class="btn btn-red" type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="social-links-row footer-social">
+            <a href="https://linkedin.com" target="_blank"><img src="../img/social_icons/linkedin.svg" alt="LinkedIn" /></a>
+            <a href="https://instagram.com" target="_blank"><img src="../img/social_icons/instagram.svg" alt="Instagram" /></a>
+          </div>
+        </div>
+      </div>
+    </footer>  
+
+    <div id="goToTop" class="goToTop">
+      <a href="#header"><img src="../img/icons/arrow_up.svg" alt="Go to top" /></a>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="../js/main.js"></script>
+    <script>
+      AOS.init();
+
+      function toggleCvMenu(event) {
+        event.stopPropagation();
+        var menu = document.getElementById("cvDropdownMenu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      }
+
+      window.onclick = function() {
+        var menu = document.getElementById("cvDropdownMenu");
+        if (menu && menu.style.display === "block") {
+          menu.style.display = "none";
+        }
+      };
+
+      (function() {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        if (!toggleBtn) return;
+
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          toggleBtn.textContent = '◒ LIGHT';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          const isDark = document.body.classList.contains('dark-mode');
+          localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+          toggleBtn.textContent = isDark ? '◒ LIGHT' : '◑ MODE';
+        });
+      })();
+    </script>
+  </body>
+</html>

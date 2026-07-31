@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Travels - Doğa Destici</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .academic-info-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 120px 20px 80px 20px;
+      }
+      .academic-section {
+        padding: 60px 0;
+        border-bottom: 2px solid var(--primary-accent);
+      }
+      .section-title-sub {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--primary-accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .travel-date {
+        text-align: center;
+        font-weight: bold;
+        color: var(--secondary-accent);
+        font-size: 1.1rem;
+        margin-top: -15px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .text-block {
+        max-width: 850px;
+        margin: 0 auto;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .fanzin-img-frame {
+        display: block;
+        width: 100%;
+        max-width: 850px;
+        height: auto;
+        max-height: 480px;
+        border: 3px solid var(--primary-accent);
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        object-fit: cover;
+        margin: 25px auto;
+      }
+      .fanzin-img-sub {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        margin-top: -10px;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+      }
+
+      body.dark-mode .academic-section {
+        border-bottom-color: #ffffff !important;
+      }
+      body.dark-mode .section-title-sub,
+      body.dark-mode .text-block p,
+      body.dark-mode .fanzin-img-sub,
+      body.dark-mode .travel-date {
+        color: #ffffff !important;
+      }
+      body.dark-mode .fanzin-img-frame {
+        border-color: #ffffff !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="index.html" class="logo">DOĞA DESTİCİ</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="akademik.html" class="nav-link">Academic</a></li>
+              <li class="nav-item"><a href="sosyal.html" class="nav-link">Social</a></li>
+              <li class="nav-item"><a href="gezi.html" class="nav-link active">Travel</a></li>
+              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+              <li class="nav-item"><a href="mailto:dogadestici@gmail.com" class="nav-link">Contact</a></li>
+              <li class="nav-item">
+                <a href="../gezi-rotalar.html" class="nav-link">🇹🇷TR</a>
+              </li> 
+              <li class="nav-item">
+                <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="academic-info-container">
+      <a href="gezi.html" class="back-btn">← Back to Travel Page</a>
+
+      <section id="giris" class="academic-section" style="padding-top: 10px;">
+        <h3 class="section-title-sub">My Travels</h3>
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            My passion for travel began with a journey I took with my mother in 2025, and traveling soon became an essential part of my life. Since then, I have returned to the streets of familiar cities and dreamed of visiting new places. I have collected incredible memories along every route, and here I share these experiences.
+          </p>
+        </div>
+      </section>
+
+      <section id="durak-1" class="academic-section">
+        <h3 class="section-title-sub">BUDAPEST</h3>
+        <div class="travel-date">// Hungary - February, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img src="../img/travel/budapeste-1.jpeg" alt="Budapest" class="fanzin-img-frame" onerror="this.src='../img/works/budapeste-1.jpeg'" />
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            This was my first experience in Budapest, and it is a truly mesmerizing city. Even though I visited in winter, it served as a wonderful destination for a first international trip. It easily ranks among my favorite places.
+          </p>
+        </div>
+      </section>
+
+      <section id="durak-2" class="academic-section">
+        <h3 class="section-title-sub">VIENNA</h3>
+        <div class="travel-date">// Austria - February, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Vienna" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/viyana-1.jpeg'" 
+          />
+          <p class="fanzin-img-sub">Votive Church</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Vienna is a beautiful city, though it didn't deeply captivate me on this visit. Nevertheless, it is a city that deserves dedicated time and budget to explore its museums one by one.
+          </p>
+        </div>
+      </section>
+
+      <section id="durak-3" class="academic-section">
+        <h3 class="section-title-sub">BRATISLAVA</h3>
+        <div class="travel-date">// Slovakia - February, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img src="../img/travel/bratislava.jpeg" alt="Bratislava" class="fanzin-img-frame" onerror="this.src='../img/works/bratislava.jpeg'" />
+          <p class="fanzin-img-sub">Slovak National Theatre</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            A very small yet charming town.
+          </p>
+        </div>
+      </section>
+
+      <section id="ROMA" class="academic-section">
+        <h3 class="section-title-sub">ROME</h3>
+        <div class="travel-date">// Italy - May, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Rome" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/roma.jpeg'" 
+          />
+          <p class="fanzin-img-sub">Colosseum</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            I am not sure if any city can quite surpass Rome. It is filled with history, wonderful food, and welcoming people. It holds a particularly special place in my memory as it was the first time I traveled abroad independently with friends.
+          </p>
+        </div>
+      </section>
+
+      <section id="POTENZA" class="academic-section">
+        <h3 class="section-title-sub">POTENZA § PIGNOLA</h3>
+        <div class="travel-date">// Italy - May, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img src="../img/travel/potenza.jpeg" alt="Pignola" class="fanzin-img-frame" onerror="this.src='../img/works/potenza.jpeg'" />
+          <p class="fanzin-img-sub">Pignola</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            I visited the Italian village of Pignola for an Erasmus+ project. We had such an incredible time that this happens to be the only photograph I took there. Despite usually preferring larger cities, Pignola's charm made me feel like I could happily stay much longer.
+          </p>
+        </div>
+      </section>
+
+      <section id="NAPOLI" class="academic-section">
+        <h3 class="section-title-sub">NAPLES</h3>
+        <div class="travel-date">// Italy - May, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Naples" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/napoli.jpeg'" 
+          />
+          <p class="fanzin-img-sub">Piazza Garibaldi</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Since we only had a few hours in Naples, I didn't have time for an extensive tour or a proper meal. Having later met many Italian friends from Naples, a return visit is certainly on my list.
+          </p>
+        </div>
+      </section>
+
+      <section id="PRAG" class="academic-section">
+        <h3 class="section-title-sub">PRAGUE</h3>
+        <div class="travel-date">// Czechia - September, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Prague" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/prag-1.jpeg'" 
+          />
+          <p class="fanzin-img-sub">My first Prague trip during Erasmus</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Prague holds a unique place for me. Exploring the city while experiencing Czech culture and daily life made it a memorable journey.
+          </p>
+        </div>
+      </section>
+
+      <section id="VIYANA-2" class="academic-section">
+        <h3 class="section-title-sub">VIENNA</h3>
+        <div class="travel-date">// Austria - October, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Vienna" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/viyana-2.jpeg'" 
+          />
+          <p class="fanzin-img-sub">Burggarten</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            This visit was much more enjoyable than my first time in Vienna. Navigating and discovering the city independently made for a much richer experience, showing how revisiting a place can offer new perspectives.
+          </p>
+        </div>
+      </section>
+
+      <section id="BUDAPESTE-2" class="academic-section">
+        <h3 class="section-title-sub">BUDAPEST</h3>
+        <div class="travel-date">// Hungary - October, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Budapest" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/budapeste-2.jpeg'" 
+          />
+          <p class="fanzin-img-sub">Buda Castle</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            My second trip to Budapest was with my Erasmus friends. Combining both visits, I spent about a week in the city; walking around listening to music was a peaceful experience.
+          </p>
+        </div>
+      </section>
+
+      <section id="PRAG-2" class="academic-section">
+        <h3 class="section-title-sub">PRAGUE</h3>
+        <div class="travel-date">// Czechia - October, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Prague" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/prag-2.jpg'"  
+          />
+          <p class="fanzin-img-sub">Charles Bridge</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            When my friends visited, I got to guide them around Czechia locally. Having dreamed of being there with them for months, exploring Prague together was a great experience.
+          </p>
+        </div>
+      </section>
+
+      <section id="PARIS" class="academic-section">
+        <h3 class="section-title-sub">PARIS</h3>
+        <div class="travel-date">// France - November, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Paris" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/paris.jpg'"  
+          />
+          <p class="fanzin-img-sub">Paris</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Paris left a strong impression on me. Despite initial preconceptions, I found it to be a wonderful city and hope to live there for a period in the future.
+          </p>
+        </div>
+      </section>
+
+      <section id="MUNIH" class="academic-section">
+        <h3 class="section-title-sub">MUNICH</h3>
+        <div class="travel-date">// Germany - New Year, 2025 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/budapeste-2.jpeg" 
+            alt="Munich" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/munih.jpeg'"  
+          />
+          <p class="fanzin-img-sub">New Year's Eve</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Celebrating New Year's Eve in my friend's Erasmus city was a wonderful experience. Hosting each other in our respective exchange destinations added meaningful value to the journey.
+          </p>
+        </div>
+      </section>
+
+      <section id="MADRID" class="academic-section">
+        <h3 class="section-title-sub">MADRID</h3>
+        <div class="travel-date">// Spain - February, 2026 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/madrid.jpeg" 
+            alt="Madrid" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/madrid.jpeg'"  
+          />
+          <p class="fanzin-img-sub">Madrid</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            I had the opportunity to explore Madrid before an Erasmus+ project. A friend had mentioned that Madrid feels like the Ankara of Spain, and they were right. I thoroughly enjoyed Spain and would love to revisit Madrid in the future.
+          </p>
+        </div>
+      </section> 
+
+      <section id="VIYANA-3" class="academic-section">
+        <h3 class="section-title-sub">VIENNA</h3>
+        <div class="travel-date">// Austria - May, 2026 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/madrid.jpeg" 
+            alt="Vienna" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/viyana-3.jpeg'"  
+          />
+          <p class="fanzin-img-sub">Vienna x3</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            After returning from Erasmus, I traveled back with close friends to revisit my exchange city and reconnect with friends there—a trip that brought great joy.
+          </p>
+        </div>
+      </section> 
+
+      <section id="BRNO" class="academic-section">
+        <h3 class="section-title-sub">BRNO</h3>
+        <div class="travel-date">// Czechia - May, 2026 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/madrid.jpeg" 
+            alt="Brno" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/brno.jpeg'"  
+          />
+          <p class="fanzin-img-sub">My Brno :')</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Returning felt like coming back home. Brno will always hold a special place in my memories. Czechia and Brno... Moc miluju, vždy budu milovat.
+          </p>
+        </div>
+      </section>
+
+      <section id="PRAG-3" class="academic-section">
+        <h3 class="section-title-sub">PRAGUE</h3>
+        <div class="travel-date">// Czechia - May, 2026 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/madrid.jpeg" 
+            alt="Prague" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/prag-3.jpeg'"  
+          />
+          <p class="fanzin-img-sub">An Evening in Prague</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            This time it was particularly difficult to leave. A truly special city.
+          </p>
+        </div>
+      </section>
+
+      <section id="KRAKOW" class="academic-section">
+        <h3 class="section-title-sub">KRAKOW</h3>
+        <div class="travel-date">// Poland - May, 2026 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/madrid.jpeg" 
+            alt="Krakow" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/krakow.jpeg'"  
+          />
+          <p class="fanzin-img-sub">Krakow - Old Town</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Poland conveys its history exceptionally well, and Krakow left a lasting impression in that regard.
+          </p>
+        </div>
+      </section>
+
+      <section id="WARSAVA" class="academic-section">
+        <h3 class="section-title-sub">WARSAW</h3>
+        <div class="travel-date">// Poland - May, 2026 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/madrid.jpeg" 
+            alt="Warsaw" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/warsaw.jpeg'"  
+          />
+          <p class="fanzin-img-sub">Warsaw - Old Town</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Warsaw was wonderful. The cuisine and streets were memorable, making it a great place to explore.
+          </p>
+        </div>
+      </section>
+
+      <section id="BUDAPESTE-3" class="academic-section" style="border-bottom: none;">
+        <h3 class="section-title-sub">BUDAPEST</h3>
+        <div class="travel-date">// Hungary - May, 2026 //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img 
+            src="../img/travel/madrid.jpeg" 
+            alt="Budapest" 
+            class="fanzin-img-frame" 
+            style="max-height: none; height: auto; max-width: 600px;" 
+            onerror="this.src='../img/works/budapest-3.jpeg'"  
+          />
+          <p class="fanzin-img-sub">Parliament Building</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Although I have spent considerable time in Budapest, enjoying the city spontaneously with close friends made this one of my most peaceful trips. Until next time, Budapest.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      AOS.init();
+
+      (function() {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        if (!toggleBtn) return;
+
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          toggleBtn.textContent = '◒ LIGHT';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          const isDark = document.body.classList.contains('dark-mode');
+          localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+          toggleBtn.textContent = isDark ? '◒ LIGHT' : '◑ MODE';
+        });
+      })();
+    </script>
+  </body>
+</html> 

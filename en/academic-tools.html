@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Tools & Resources - Doğa Destici</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .projects-container {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 120px 20px 80px 20px;
+      }
+      .tool-index {
+        font-weight: bold;
+        color: var(--secondary-accent);
+        margin-bottom: 12px;
+        font-size: 1.15rem;
+      }
+      .tool-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .tool-list li {
+        margin-bottom: 15px;
+        line-height: 1.7;
+        text-align: justify;
+      }
+      .tool-list li strong {
+        color: var(--primary-accent);
+      }
+
+      /* Code Box Wrapper & Copy Button Styling */
+      .code-block-wrapper {
+        position: relative;
+        margin: 25px 0;
+      }
+      .copy-code-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: var(--primary-accent);
+        color: #ffffff;
+        border: none;
+        padding: 6px 14px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s, opacity 0.2s;
+        z-index: 10;
+      }
+      .copy-code-btn:hover {
+        opacity: 0.9;
+      }
+
+      body.dark-mode .tool-list li strong {
+        color: #ffffff !important;
+      }
+      body.dark-mode pre code {
+        color: #e6e6e6 !important;
+      }
+      body.dark-mode .copy-code-btn {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="index.html" class="logo">DOĞA DESTİCİ</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="akademik.html" class="nav-link active">Academic</a></li>
+              <li class="nav-item"><a href="sosyal.html" class="nav-link">Social</a></li>
+              <li class="nav-item"><a href="gezi.html" class="nav-link">Travel</a></li>
+              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+              <li class="nav-item"><a href="mailto:dogadestici@gmail.com" class="nav-link">Contact</a></li>
+              <li class="nav-item">
+                <a href="../academic-tools.html" class="nav-link">🇹🇷TR</a>
+              </li> 
+              <li class="nav-item">
+                <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="projects-container">
+      <a href="akademik.html" class="back-btn">← Back to Academic Work</a>
+
+      <div style="margin-bottom: 40px;" data-aos="fade-up">
+        <h2 style="font-size: 2.2rem; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Research Tools & Resources</h2>
+        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--supportive-text-color);">
+          Analytical tools, methodological frameworks, and digital infrastructure used for performing symbolic calculations, constructing models, and following literature in my theoretical physics, differential geometry, and general relativity research.
+        </p>
+      </div>
+
+      <!-- SECTION: arXiv SUB & PYTHON FILTER -->
+      <section id="arxiv-filtering" style="margin-bottom: 50px;" data-aos="fade-up">
+        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: var(--primary-accent); text-transform: uppercase;">
+          arXiv Subscriptions & Custom Python Mail Filter
+        </h3>
+        
+        <div class="text-block" style="font-size: 1.1rem; line-height: 1.8;">
+          <p>
+            To keep up with the latest literature in theoretical physics and general relativity, I subscribe to daily arXiv email updates. arXiv provides automated daily mailings that list all newly submitted preprints in specific subject categories.
+          </p>
+
+          <h4 style="font-size: 1.25rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
+            How to Subscribe to Daily arXiv Updates
+          </h4>
+          <p>
+            You can receive daily digests of new papers sent directly to your inbox by following these steps:
+          </p>
+          <ul style="list-style-type: square; padding-left: 25px; margin: 15px 0; line-height: 2;">
+            <li>
+              <strong>Create an Account / Log In:</strong> Visit the <a href="https://arxiv.org/login" target="_blank" rel="noopener">arXiv User Login</a> page and sign in to your account.
+            </li>
+            <li>
+              <strong>Subscribe to Categories:</strong> Go to the <a href="https://arxiv.org/user/subscriptions" target="_blank" rel="noopener">arXiv Subscriptions Management</a> page. Select your fields of interest—such as <strong>Mathematical Physics (math-ph)</strong> and <strong>General Relativity and Quantum Cosmology (gr-qc)</strong>—and enable email notifications.
+            </li>
+            <li>
+              <strong>Daily Digest:</strong> Every weekday, arXiv sends a structured email containing titles, abstracts, authors, and direct paper links submitted in your chosen categories.
+            </li>
+          </ul>
+
+          <h4 style="font-size: 1.25rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
+            Automated Python Email Filter
+          </h4>
+          <p>
+            Since daily digests often contain dozens of preprints outside my immediate research scope, I use a custom Python script to filter the email content locally. By simply pasting the raw email text into VS Code, the script categorizes papers based on research interests and outputs titles, authors, and links.
+          </p>
+
+          <!-- CODE BLOCK WITH COPY BUTTON -->
+          <div class="code-block-wrapper">
+            <button class="copy-code-btn" onclick="copyPythonCode()">📋 Copy Code</button>
+            <pre style="background: var(--gray-color); padding: 25px 20px 20px 20px; border: 2px solid var(--primary-accent); border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 0.95rem; line-height: 1.5;"><code id="pythonCodeBlock">import re
+
+INTERESTS = {
+    "category_1": [
+        "keyword_1", "keyword_2", "keyword_3"
+    ],
+    "category_2": [
+        "keyword_1", "keyword_2", "keyword_3"
+    ],
+    "category_3": [
+        "keyword_1", "keyword_2", "keyword_3"
+    ],
+    "category_4": [
+        "keyword_1", "keyword_2", "keyword_3"
+    ]
+}
+
+def analyze_expanded_arxiv_mail(raw_text):
+    raw_papers = re.split(r'-{10,}', raw_text)
+    
+    categorized_papers = {cat: [] for cat in INTERESTS}
+    categorized_papers["Other (Outside Interest)"] = []
+
+    for block in raw_papers:
+        if not block.strip() or "Title:" not in block:
+            continue
+            
+        title_match = re.search(r'Title:\s*(.*?)(?=\n(?:Authors:|Categories:|Comments:|Report-no:)|$)', block, re.DOTALL)
+        authors_match = re.search(r'Authors:\s*(.*?)(?=\n(?:Comments:|Categories:|MSC-class:|Report-no:|\\)|$)', block, re.DOTALL)
+        
+        title = title_match.group(1).replace('\n', ' ').strip() if title_match else "Unknown Title"
+        authors_raw = authors_match.group(1).replace('\n', ' ').strip() if authors_match else "Unknown Authors"
+        
+        link_match = re.search(r'https://arxiv\.org/abs/\d{4}\.\d{4,5}', block)
+        
+        if link_match:
+            paper_link = link_match.group(0)
+        else:
+            id_match = re.search(r'arXiv:\d{4}\.\d{4,5}', block)
+            paper_link = f"https://arxiv.org/abs/{id_match.group(0).split(':')[1]}" if id_match else "Link Not Found"
+        
+        authors_cleaned = re.sub(r'\(.*?\)', '', authors_raw)
+        clean_authors = [a.strip() for a in re.split(r',| and ', authors_cleaned) if a.strip()]
+        
+        block_lower = block.lower()
+        matched_any_category = False
+        
+        for category, keywords in INTERESTS.items():
+            if any(kw in block_lower for kw in keywords):
+                categorized_papers[category].append({
+                    "title": title,
+                    "authors": clean_authors,
+                    "link": paper_link
+                })
+                matched_any_category = True
+                break
+                
+        if not matched_any_category:
+            categorized_papers["Other (Outside Interest)"].append({
+                "title": title,
+                "authors": clean_authors,
+                "link": paper_link
+            })
+            
+    return categorized_papers
+
+def print_results(categorized_data):
+    for category, papers in categorized_data.items():
+        if not papers:
+            continue
+        print(f"\n=== {category} ({len(papers)} Papers) ===")
+        for idx, paper in enumerate(papers, 1):
+            authors_str = ", ".join(paper['authors'])
+            print(f"{idx}. Title: {paper['title']}")
+            print(f"   Authors: {authors_str}")
+            print(f"   Link: {paper['link']}")
+            print("-" * 40)
+
+email_content = r''' 
+\\
+
+'''
+
+results = analyze_expanded_arxiv_mail(email_content)
+print_results(results)</code></pre>
+          </div>
+
+          <!-- SINGLE SUBSCRIPTION BUTTON -->
+          <div class="link-buttons-wrapper" style="display: flex; justify-content: center; margin-top: 30px;">
+            <a href="https://arxiv.org/user/subscriptions" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0;">
+              Manage arXiv Subscriptions ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="collab-box" style="margin-top: 0; margin-bottom: 40px; padding: 20px;" data-aos="fade-up">
+        <p style="font-style: italic; margin-bottom: 0;">
+          <strong style="color: var(--secondary-accent);">[NOTE]:</strong> Software tools, libraries, and computational frameworks in this section are continuously updated as research progresses.
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      AOS.init();
+
+      function copyPythonCode() {
+        const codeText = document.getElementById('pythonCodeBlock').innerText;
+        navigator.clipboard.writeText(codeText).then(() => {
+          const btn = document.querySelector('.copy-code-btn');
+          btn.textContent = '✓ Copied!';
+          setTimeout(() => {
+            btn.textContent = '📋 Copy Code';
+          }, 2000);
+        });
+      }
+
+      (function() {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        if (!toggleBtn) return;
+
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          toggleBtn.textContent = '◒ LIGHT';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          const isDark = document.body.classList.contains('dark-mode');
+          localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+          toggleBtn.textContent = isDark ? '◒ LIGHT' : '◑ MODE';
+        });
+      })();
+    </script>
+  </body>
+</html> 

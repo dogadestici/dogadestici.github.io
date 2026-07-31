@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Blog - Doğa Destici</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+      .academic-info-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 120px 20px 80px 20px;
+      }
+      .academic-section {
+        padding: 60px 0;
+        border-bottom: 2px solid var(--primary-accent);
+      }
+      .section-title-sub {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--primary-accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .blog-date {
+        text-align: center;
+        font-weight: bold;
+        color: var(--secondary-accent);
+        font-size: 1.05rem;
+        margin-top: -10px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .text-block {
+        max-width: 850px;
+        margin: 0 auto;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .fanzin-img-frame {
+        display: block;
+        width: 100%;
+        max-width: 850px;
+        height: auto;
+        max-height: 480px;
+        border: 3px solid var(--primary-accent);
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        object-fit: cover;
+        margin: 25px auto;
+      }
+      .fanzin-img-sub {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        margin-top: -10px;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+      }
+      body.dark-mode .academic-section { border-bottom-color: #ffffff !important; }
+      body.dark-mode .section-title-sub,
+      body.dark-mode .text-block p,
+      body.dark-mode .fanzin-img-sub,
+      body.dark-mode .blog-date { color: #ffffff !important; }
+      body.dark-mode .fanzin-img-frame { border-color: #ffffff !important; }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER / NAVIGATION -->
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="index.html" class="logo">DOĞA DESTİCİ</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="akademik.html" class="nav-link">Academic</a></li>
+              <li class="nav-item"><a href="sosyal.html" class="nav-link">Social</a></li>
+              <li class="nav-item"><a href="gezi.html" class="nav-link">Travel</a></li>
+              <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+              <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+              
+              <!-- DİL SEÇENEĞİ BUTONU (TR) -->
+              <li class="nav-item">
+                <a href="../blog-sosyal.html" class="nav-link">🇹🇷TR</a>
+              </li> 
+
+              <!-- DARK MODE BUTTON -->
+              <li class="nav-item">
+                <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
+                <script>
+                  (function() {
+                    const btn = document.getElementById('darkModeToggle');
+                    if (localStorage.getItem('dark-mode') === 'enabled') {
+                      document.body.classList.add('dark-mode');
+                      btn.textContent = '◒ LIGHT';
+                    }
+                    btn.addEventListener('click', () => {
+                      document.body.classList.toggle('dark-mode');
+                      if (document.body.classList.contains('dark-mode')) {
+                        localStorage.setItem('dark-mode', 'enabled');
+                        btn.textContent = '◒ LIGHT';
+                      } else {
+                        localStorage.setItem('dark-mode', 'disabled');
+                        btn.textContent = '◑ MODE';
+                      }
+                    });
+                  })();
+                </script>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="academic-info-container">
+      <!-- BACK BUTTON -->
+      <a href="blog.html" class="back-btn">← Back to Blog</a>
+
+      <!-- INTRODUCTION SECTION -->
+      <section id="sosyal-blog-giris" class="academic-section" style="padding-top: 10px;">
+        <h3 class="section-title-sub">Social Blog</h3>
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            A space where I share notes on events I attend, places I visit, music, daily life memories, and topics that interest me.
+          </p>
+        </div> 
+      </section>
+ 
+      <!-- POST 1 -->
+      <section id="yazi-1" class="academic-section">
+        <h3 class="section-title-sub"></h3>
+        <div class="blog-date">// DISCOVERING PANOPTIKUM //</div>
+        
+        <div style="text-align: center;" data-aos="fade-up">
+          <img src="../img/blog/yeralti.jpg" alt="Underground Stage" class="fanzin-img-frame" onerror="this.src='../img/works/s-blog-1.jpeg'" />
+          <p class="fanzin-img-sub">12.12.2025 - Namesti Svobody - BRNO</p>
+        </div>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            During my Erasmus term in Czechia, live music was one of the things I missed most. In Turkey, I regularly went to concerts by underground and local bands, but there I felt completely disconnected from that scene. While I found venues that fit my taste, I had a limited group of friends and felt hesitant to go alone.
+            <br /><br />
+            Four months into Erasmus, on a very cold winter day while walking through the Christmas market, my friend and I saw a band doing a soundcheck. We decided to stay and listen, and we absolutely loved their sound. Luckily, they had another concert the following week, which we went to as well. That day made me realize how great it can be to follow something spontaneously, even on your own.
+            <br /><br />
+            I have been listening to Panoptikum almost every day since. It helped me overcome my hesitancy and added Czech rock to my playlists.
+            <br /><br />
+            If you would like to listen to the band and check them out, you can find their Instagram and Spotify links below:
+          </p>
+          
+          <!-- PANOPTIKUM LINK SECTION -->
+          <div class="link-buttons-wrapper" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+            <!-- PANOPTIKUM SPOTIFY -->
+            <a href="https://open.spotify.com/artist/7qOj60OIFvDMSEvhPh3k8B?si=q-3ZI5aOTXmTZNQovW0Dbg" target="_blank" class="btn btn-white" style="margin: 0; display: inline-block; position: relative; z-index: 20; pointer-events: auto;">
+              Panoptikum on Spotify ↗
+            </a>
+
+            <!-- PANOPTIKUM IG -->
+            <a href="https://www.instagram.com/panoptikum.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-white" style="margin: 0; display: inline-block; position: relative; z-index: 20; pointer-events: auto;">
+              Panoptikum on IG ↗
+            </a>
+          </div> 
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-copyright" style="width: 100%; text-align: center; padding: 20px 0;">
+            <p>&copy; Copyright DOĞA DESTİCİ 2026</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>AOS.init();</script>
+  </body>
+</html> 

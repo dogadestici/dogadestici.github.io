@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akademik Blog - Doğa Destici</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+      .academic-info-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 120px 20px 80px 20px;
+      }
+      .academic-section {
+        padding: 60px 0;
+        border-bottom: 2px solid var(--primary-accent);
+      }
+      .section-title-sub {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--primary-accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .blog-date {
+        text-align: center;
+        font-weight: bold;
+        color: var(--secondary-accent);
+        font-size: 1.05rem;
+        margin-top: -10px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .text-block {
+        max-width: 850px;
+        margin: 0 auto;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .fanzin-img-frame {
+        display: block;
+        width: 100%;
+        max-width: 850px;
+        height: auto;
+        max-height: 480px;
+        border: 3px solid var(--primary-accent);
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        object-fit: cover;
+        margin: 25px auto;
+      }
+      .fanzin-img-sub {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        margin-top: -10px;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+      }
+      body.dark-mode .academic-section { border-bottom-color: #ffffff !important; }
+      body.dark-mode .section-title-sub,
+      body.dark-mode .text-block p,
+      body.dark-mode .fanzin-img-sub,
+      body.dark-mode .blog-date { color: #ffffff !important; }
+      body.dark-mode .fanzin-img-frame { border-color: #ffffff !important; }
+    </style>
+  </head>
+
+  <body>
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a href="index.html" class="logo">DOĞA DESTİCİ</a>
+          <nav id="nav" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
+              <li class="nav-item"><a href="akademik.html" class="nav-link">Akademik</a></li>
+              <li class="nav-item"><a href="sosyal.html" class="nav-link">Sosyal</a></li>
+              <li class="nav-item"><a href="gezi.html" class="nav-link">Gezi</a></li>
+              <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+              <li class="nav-item"><a href="index.html#contact" class="nav-link">İletişim</a></li> 
+              <li class="nav-item">
+                <a href="en/blog-akademik.html" class="nav-link">🇬🇧EN</a>
+              </li> 
+              <li class="nav-item">
+                <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    </header>
+
+    <div class="academic-info-container">
+      <a href="blog.html" class="back-btn">← Blog Sayfasına Dön</a>
+
+      <section id="akademik-blog-giris" class="academic-section" style="padding-top: 10px;">
+        <h3 class="section-title-sub">Akademik Blog & Araştırma Notları</h3>
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Ders notlarım, üzerinde çalıştığım konular, akademik araştırmalarım, ilgimi çeken makaleler ve alanımla ilgili paylaşmak istediğim yazılar.
+          </p>
+        </div>
+      </section>
+
+      <section id="alpoge-jacobian" class="academic-section" style="border-bottom: none;">
+        <h3 class="section-title-sub">Levent Alpöge, Claude Fable 5 ve Jacobian Sanısı'nın Geleceği</h3>
+
+        <div class="text-block" data-aos="fade-up">
+          <p>
+            Son günlerde özellikle sosyal medyada ve matematik mecralarında karşımıza çıkan, sayfalarımıza düşen o büyük haberi biraz yakından incelemek istedim. Cebirsel geometride 1939'dan beri kimsenin bükemediği ve çözmek için verilen sayısız hatalı kanıtla meşhur olan <strong>Jacobian Sanısı (Jacobian Conjecture)</strong>, 20 Temmuz 2026'da tarihi bir kırılma yaşadı <sup>[1, 2]</sup>. Matematikçi ve Anthropic araştırmacısı <strong>Levent Alpöge</strong>, dünya kupası finalinin oynandığı akşam, 3 boyutlu uzay ($n=3$) için sanıyı yanlışlayan somut bir karşıt örneği bizimle paylaştı ve bunu resmi bir makale yerine, kısa bir X (Twitter) gönderisiyle duyurdu <sup>[3]</sup>.
+          </p>
+          
+          <h4 style="font-size: 1.3rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
+            Keşfin Arka Planı
+          </h4>
+          <p>
+            Beni bu olayda en heyecanlandıran şeylerden biri Alpöge'nin bunu yaparken Anthropic'in yeni nesil büyük dil modeli <em>Claude Fable 5</em> kullanması oldu. <sup>[3]</sup>. Yapay zekanın son dönemlerde çözülemeyen matematik problemleri üzerinde çalıştığını ve bazılarından güzel sonuçlar elde ettiğimizi biliyorduk. Ve Jacobian Sanısı gibi bir soruya, derece ve terim sayısı açısından bir insanın elle hesaplamasının imkansız olduğu 3 boyutlu bir polinom sisteminde, Jacobian determinantı sabit çıkan ama tersi asla polinom olmayan o "yıkıcı" yapıyı bulmayı başardılar <sup>[3]</sup>.
+          </p>
+
+          <h4 style="font-size: 1.3rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
+            Peki Şimdi Ne Olacak?
+          </h4>
+          <p>
+            Alpöge'nin $n=3$ boyutunda getirdiği bu karşıt örnek işi tabii ki de bitirmedi, aksine işleri daha da kızıştırdı: 
+          </p>
+          <ul style="list-style-type: square; padding-left: 25px; margin: 15px 0; line-height: 2;">
+            <li>
+              <strong>2-Boyutlu ($n=2$) Durum Hala Bir Muamma:</strong> Literatürde 2-değişkenli durum ile genel $n$-değişkenli durum hep ayrı kulvarlarda değerlendiriliyordu <sup>[1, 4]</sup>. Alpöge $n=3$'ü çökertti ama $n=2$ durumu hala çözülmemiş durumda ve araştırmacıların yeni gözdesi olmaya aday <sup>[3]</sup>.
+            </li>
+            <li>
+              <strong>Dixmier Sanısı:</strong> Bu mesele sadece cebirsel geometriyi değil, kuantum mekaniği ve cebirsel yapılarda devasa yeri olan <em>Dixmier Sanısı</em> ile de denk kabul ediliyordu <sup>[4, 5]</sup>. $n=3$'ün yanlışlanması, bu denk yapılar üzerindeki eski kabullerin de yeniden masaya yatırılmasına yol açacak gibi duruyor <sup>[4]</sup>.
+            </li>
+            <li>
+              <strong>Hakem Kontrolü Süreci Henüz Tamamlanmadı:</strong> Şunu da belirtmek gerekiyor ki bu, resmi olarak hakemli bir dergide yayımlanmış bir sonuç değil. Matematikçiler şu ana kadar gösterilen sembolik hesaplamaları bağımsız olarak halka açık şekilde tekrar ürettiler, hatta örnek saatler içinde Lean kanıt-doğrulama dilinde makine tarafından doğrulandı ki bu da haritanın doğruluğunu güçlü şekilde destekliyor ama klasik hakemlik süreci ve resmi bir makale henüz ortaya çıkmadı <sup>[3]</sup>.
+            </li>
+          </ul>
+
+          <h4 style="font-size: 1.3rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
+            Bütün bu heyecanlı gelişmeler bir yana bu açıklama Leiden Bildirisi bazında nerede duruyor?
+          </h4>
+          <p>
+            Bu noktada bence işin en tartışmalı ve düşündürücü kısmına geliyoruz. Alpöge'nin sonucundan sadece birkaç hafta önce, 2 Haziran 2026'da, 15 üniversiteden 16 araştırmacı <strong>"Leiden Bildirisi: Yapay Zeka ve Matematik" (Leiden Declaration on Artificial Intelligence and Mathematics)</strong> adlı bir metin yayımladı ve bu bildiri Uluslararası Matematik Birliği (IMU) tarafından da resmen desteklendi <sup>[6]</sup>. Bildiri, kökenini Eylül 2025'te Leiden Üniversitesi'ndeki Lorentz Center'da düzenlenen bir çalıştaydan alıyor ve matematikte doğrulanabilirlik, atıf/şeffaflık, araştırma özerkliği, finansman ve eşitsiz erişim gibi konularda somut çağrılarda bulunuyor <sup>[6]</sup>.
+          </p>
+          <p>
+            Peki Alpöge'nin bu sonucu bildirinin savunduğu değerlerle nasıl bir ilişki içinde? Bence burada işin iki yüzü var, ve burada sizin görüşlerinizi de açıkçası merak ediyorum:
+          </p>
+          <ul style="list-style-type: square; padding-left: 25px; margin: 15px 0; line-height: 2;">
+            <li>
+              <strong>Şeffaflık açısından olumlu bir örnek sayılabilir:</strong> Alpöge, X gönderisinde Claude Fable 5'i açıkça "ortak keşifçi" olarak kredilendirdi ve Wolfram Alpha üzerinden doğrulama bağlantıları paylaştı. Bu, bildirinin ısrarla talep ettiği "AI araç kullanımının açık şekilde beyan edilmesi" ilkesiyle örtüşüyor.
+            </li>
+            <li>
+              <strong>Ama süreç açısından bildirinin endişelerini de doğruluyor olabilir:</strong> Sonuç, akademik bir dergide değil sosyal medyada, bir yapay zeka şirketinin (Anthropic) kendi araştırmacısı tarafından, klasik hakemlik süreci tamamlanmadan duyuruldu. Bildirinin altını çizdiği "kim sorumlu, kim itibar sahibi olacak, ve araştırma gündemi giderek teknoloji şirketlerinin ticari çıkarlarınca mı şekillenecek" sorularının tam da örneklendiği bir vaka olarak da okunabilir.
+            </li>
+            <li>
+              <strong>Hız meselesi de tartışmaya açık:</strong> Doğrulamanın saatler içinde gerçekleşmesi bir yandan güven verici, diğer yandan da bildirinin uyardığı gibi "hakem sistemlerinin güvenilmez argümanlarla boğulma" riskine örnek teşkil edip etmediği tartışılabilir bir konu.
+            </li>
+          </ul>
+          <p>
+            Bence bu, hem heyecan verici bir matematiksel başarı hem de geleneksel yöntemleri bıraktığımızın bir göstergesi.
+          </p>
+
+          <p style="margin-top: 25px; text-align: center; font-weight: bold; color: var(--secondary-accent);">
+            Konuyla ilgili Levent Alpöge'nin kişisel sayfasını, Leiden Bildirgesi'nin orijinal metnini ve Türk Matematik Derneği'nin Türkçe çevirisini aşağıda bulabilirsiniz:
+          </p> 
+
+          <div class="link-buttons-wrapper" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 35px;">
+            <a href="https://leventalpoge.com" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0; display: inline-block;">
+              Levent Alpöge Web Sayfası ↗
+            </a>
+
+            <a href="https://leidendeclaration.ai" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0; display: inline-block;">
+              Leiden Declaration (Orijinal Metin) ↗
+            </a>
+
+            <a href="https://tmd.org.tr/leiden-yapay-zeka-ve-matematik-bildirgesi/" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0; display: inline-block;">
+              TMD - Leiden Bildirisi Türkçe Çevirisi ↗
+            </a>
+          </div>
+
+          <div style="margin-top: 40px; padding-top: 20px; border-top: 1px dashed var(--primary-accent); font-size: 0.95rem;">
+            <p style="font-weight: bold; margin-bottom: 10px; color: var(--secondary-accent);">[Kaynaklar & Referanslar]:</p>
+            <ol style="padding-left: 20px; line-height: 1.8;">
+              <li>Keller, O. H. (1939). "Ganze Cremona-Transformationen". <em>Monatshefte für Mathematik und Physik</em>, 47(1), 299-306.</li>
+              <li>Smale, S. (1998). "Mathematical Problems for the Next Century". <em>The Mathematical Intelligencer</em>, 20(2), 7-15.</li>
+              <li>Alpöge, L. X post, 20 Temmuz 2026. (Resmi, hakemli bir makale henüz yayımlanmadı; sonuç şu an için bir sosyal medya duyurusu ve bağımsız doğrulamalara dayanmaktadır.)</li>
+              <li>Bass, H., Connell, E. H., & Wright, D. (1982). "The Jacobian conjecture: reduction of degree and formal expansion of the inverse". <em>Bulletin of the American Mathematical Society</em>, 7(2), 287-330.</li>
+              <li>Dixmier, J. (1968). "Sur les algèbres de Weyl". <em>Bulletin de la Société Mathématique de France</em>, 96, 209-242.</li>
+              <li>Leiden Declaration on Artificial Intelligence and Mathematics (2026). Yayımlanma: 2 Haziran 2026. Lorentz Center, Leiden Üniversitesi çalıştayı (Eylül 2025) sonucunda hazırlanmıştır; Uluslararası Matematik Birliği (IMU) tarafından desteklenmektedir. <a href="https://leidendeclaration.ai/" target="_blank" rel="noopener">leidendeclaration.ai</a></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init();
+
+      (function() {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        if (!toggleBtn) return;
+
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+          toggleBtn.textContent = '◒ LIGHT';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          const isDark = document.body.classList.contains('dark-mode');
+          localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+          toggleBtn.textContent = isDark ? '◒ LIGHT' : '◑ MODE';
+        });
+      })();
+    </script>
+  </body>
+</html> 
