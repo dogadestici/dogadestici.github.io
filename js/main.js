@@ -3,9 +3,12 @@ import form from "./form.js";
 import skillbar from "./skillbar.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  AOS.init({
-    once: true,
-  });
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      once: true,
+    });
+  }
+
   form();
   skillbar();
 
@@ -13,47 +16,81 @@ document.addEventListener("DOMContentLoaded", () => {
   const navBtn = document.querySelector("#nav-btn");
   const navBtnImg = document.querySelector("#nav-btn-img");
 
-  //Hamburger menu
-  navBtn.onclick = () => {
-    if (nav.classList.toggle("open")) {
-      navBtnImg.src = "img/icons/close.svg";
-    } else {
-      navBtnImg.src = "img/icons/open.svg";
-    }
-  };
+  const isEnPage = window.location.pathname.includes("/en/");
+  const openIconPath = isEnPage ? "../img/icons/open.svg" : "img/icons/open.svg";
+  const closeIconPath = isEnPage ? "../img/icons/close.svg" : "img/icons/close.svg";
+
+  // Hamburger menu toggle
+  if (navBtn && nav) {
+    navBtn.onclick = (e) => {
+      e.stopPropagation();
+      const isOpen = nav.classList.toggle("open");
+      if (navBtnImg) {
+        navBtnImg.src = isOpen ? closeIconPath : openIconPath;
+      }
+    };
+
+    // Close menu when a link is clicked
+    const navLinks = nav.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        if (navBtnImg) {
+          navBtnImg.src = openIconPath;
+        }
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (nav.classList.contains("open") && !nav.contains(e.target) && !navBtn.contains(e.target)) {
+        nav.classList.remove("open");
+        if (navBtnImg) {
+          navBtnImg.src = openIconPath;
+        }
+      }
+    });
+  }
+
+  // Sticky Header & GoToTop
+  const header = document.querySelector("#header");
+  const goToTop = document.querySelector("#goToTop");
+  const hero = document.querySelector("#home") || document.querySelector(".hero") || document.querySelector(".academic-info-container");
 
   window.addEventListener("scroll", function () {
-    const header = document.querySelector("#header");
-    const hero = document.querySelector("#home");
-    let triggerHeight = hero.offsetHeight - 170;
+    let triggerHeight = hero ? (hero.offsetHeight > 170 ? hero.offsetHeight - 170 : 100) : 100;
 
     if (window.scrollY > triggerHeight) {
-      header.classList.add("header-sticky");
-      goToTop.classList.add("reveal");
+      if (header) header.classList.add("header-sticky");
+      if (goToTop) goToTop.classList.add("reveal");
     } else {
-      header.classList.remove("header-sticky");
-      goToTop.classList.remove("reveal");
+      if (header) header.classList.remove("header-sticky");
+      if (goToTop) goToTop.classList.remove("reveal");
     }
   });
 
-  let sections = document.querySelectorAll("section");
-  let navLinks = document.querySelectorAll("header nav a");
+  // Active Nav Links on Scroll
+  let sections = document.querySelectorAll("section[id]");
+  let headerNavLinks = document.querySelectorAll("header nav a");
 
-  window.onscroll = () => {
-    sections.forEach((sec) => {
+  if (sections.length > 0 && headerNavLinks.length > 0) {
+    window.addEventListener("scroll", () => {
       let top = window.scrollY;
-      let offset = sec.offsetTop - 170;
-      let height = sec.offsetHeight;
-      let id = sec.getAttribute("id");
+      sections.forEach((sec) => {
+        let offset = sec.offsetTop - 170;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute("id");
 
-      if (top >= offset && top < offset + height) {
-        navLinks.forEach((links) => {
-          links.classList.remove("active");
-          document
-            .querySelector("header nav a[href*=" + id + "]")
-            .classList.add("active");
-        });
-      }
+        if (id && top >= offset && top < offset + height) {
+          headerNavLinks.forEach((link) => {
+            if (link.getAttribute("href") && link.getAttribute("href").includes(id)) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
     });
-  };
+  }
 });

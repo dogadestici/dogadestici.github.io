@@ -237,7 +237,68 @@ a:hover {
 
 .nav-btn, 
 #nav-btn {
-  display: none !important;
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+  z-index: 2000;
+}
+
+.nav-btn img,
+#nav-btn-img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+
+/* CV Dropdown Stilleri */
+.cv-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.cv-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  background-color: var(--white-color);
+  border: 2px solid var(--primary-accent);
+  min-width: 180px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 100;
+  text-align: center;
+}
+
+.cv-dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  color: var(--primary-accent);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cv-dropdown-item:hover {
+  background-color: var(--gray-color);
+  color: var(--secondary-accent);
+}
+
+.cv-dropdown-divider {
+  height: 1px;
+  background-color: var(--primary-accent);
 }
 
 /* Hero Bölümü */
@@ -290,6 +351,12 @@ a:hover {
 
 .hero-img img {
   display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
 }
 
 /* Sosyal Medya İkonları */
@@ -761,4 +828,31 @@ body.dark-mode .social-links-row a:hover,
 body.dark-mode .about-social-list a:hover,
 body.dark-mode .footer-social a:hover {
   filter: invert(11%) sepia(91%) saturate(5427%) hue-rotate(352deg) brightness(87%) contrast(114%) !important;
+}
+
+body.dark-mode .cv-dropdown-menu {
+  background-color: #1a1a1a !important;
+  border-color: #ffffff !important;
+}
+
+body.dark-mode .cv-dropdown-item {
+  color: #ffffff !important;
+}
+
+body.dark-mode .cv-dropdown-item:hover {
+  background-color: #222222 !important;
+  color: var(--secondary-accent) !important;
+}
+
+body.dark-mode .cv-dropdown-divider {
+  background-color: #ffffff !important;
+}
+
+body.dark-mode #nav-btn-img,
+body.dark-mode .nav-btn img {
+  filter: invert(100%) !important;
+}
+
+body.dark-mode .nav.open .nav-list {
+  background-color: #111111 !important;
 } 

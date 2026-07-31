@@ -76,6 +76,9 @@
       <div class="container container-lg">
         <div class="header-nav">
           <a href="index.html" class="logo">DOĞA DESTİCİ</a>
+          <button id="nav-btn" class="nav-btn" aria-label="Menüyü Aç/Kapat">
+            <img id="nav-btn-img" src="img/icons/open.svg" alt="Menü" />
+          </button>
           <nav id="nav" class="nav">
             <ul class="nav-list">
               <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
@@ -118,32 +121,34 @@
       <section id="kimlik" class="academic-section">
         <h3 class="section-title-sub">Akademik Skorlar</h3>
         <div data-aos="fade-up" style="display: flex; justify-content: center;">
-          <table class="score-table">
-            <thead>
-              <tr>
-                <th>Sınav / Kriter</th>
-                <th>Sonuç / Puan</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Güncel GPA (Lisans Ortalama)</strong></td>
-                <td>2.46 / 4.00</td>
-              </tr>
-              <tr>
-                <td><strong>IELTS Academic</strong></td>
-                <td>.../9.0</td>
-              </tr>
-              <tr>
-                <td><strong>ALES (Sayısal)</strong></td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td><strong>ODTÜ İngilizce Yeterlilik (Dil Puanı)</strong></td>
-                <td>...</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="score-table">
+              <thead>
+                <tr>
+                  <th>Sınav / Kriter</th>
+                  <th>Sonuç / Puan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Güncel GPA (Lisans Ortalama)</strong></td>
+                  <td>2.46 / 4.00</td>
+                </tr>
+                <tr>
+                  <td><strong>IELTS Academic</strong></td>
+                  <td>.../9.0</td>
+                </tr>
+                <tr>
+                  <td><strong>ALES (Sayısal)</strong></td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td><strong>ODTÜ İngilizce Yeterlilik (Dil Puanı)</strong></td>
+                  <td>...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
