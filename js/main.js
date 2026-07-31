@@ -1,54 +1,9 @@
 "use strict";
-import form from "./form.js";
-import skillbar from "./skillbar.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof AOS !== "undefined") {
     AOS.init({
       once: true,
-    });
-  }
-
-  form();
-  skillbar();
-
-  const nav = document.querySelector("#nav");
-  const navBtn = document.querySelector("#nav-btn");
-  const navBtnImg = document.querySelector("#nav-btn-img");
-
-  const isEnPage = window.location.pathname.includes("/en/");
-  const openIconPath = isEnPage ? "../img/icons/open.svg" : "img/icons/open.svg";
-  const closeIconPath = isEnPage ? "../img/icons/close.svg" : "img/icons/close.svg";
-
-  // Hamburger menu toggle
-  if (navBtn && nav) {
-    navBtn.onclick = (e) => {
-      e.stopPropagation();
-      const isOpen = nav.classList.toggle("open");
-      if (navBtnImg) {
-        navBtnImg.src = isOpen ? closeIconPath : openIconPath;
-      }
-    };
-
-    // Close menu when a link is clicked
-    const navLinks = nav.querySelectorAll("a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        if (navBtnImg) {
-          navBtnImg.src = openIconPath;
-        }
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (nav.classList.contains("open") && !nav.contains(e.target) && !navBtn.contains(e.target)) {
-        nav.classList.remove("open");
-        if (navBtnImg) {
-          navBtnImg.src = openIconPath;
-        }
-      }
     });
   }
 

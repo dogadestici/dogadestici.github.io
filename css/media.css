@@ -51,6 +51,7 @@
     justify-content: center;
     position: relative;
     z-index: 2001;
+    margin-left: auto;
   }
 
   .nav.open .nav-list {

@@ -99,25 +99,6 @@
               <!-- DARK MODE BUTTON -->
               <li class="nav-item">
                 <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
-                <script>
-                  (function() {
-                    const btn = document.getElementById('darkModeToggle');
-                    if (localStorage.getItem('dark-mode') === 'enabled') {
-                      document.body.classList.add('dark-mode');
-                      btn.textContent = '◒ LIGHT';
-                    }
-                    btn.addEventListener('click', () => {
-                      document.body.classList.toggle('dark-mode');
-                      if (document.body.classList.contains('dark-mode')) {
-                        localStorage.setItem('dark-mode', 'enabled');
-                        btn.textContent = '◒ LIGHT';
-                      } else {
-                        localStorage.setItem('dark-mode', 'disabled');
-                        btn.textContent = '◑ MODE';
-                      }
-                    });
-                  })();
-                </script>
               </li>
             </ul>
           </nav>
@@ -190,6 +171,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>AOS.init();</script>
+    <script src="../js/site.js"></script>
   </body>
 </html> 

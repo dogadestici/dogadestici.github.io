@@ -44,22 +44,22 @@
       </div>
     </header> 
 
-    <section id="home" class="hero">
+    <section id="home" class="hero" style="padding-top: 200px; padding-bottom: 80px; display: flex; justify-content: center; align-items: center; text-align: center;">
       <div class="container">
-        <div class="hero-row">
+        <div class="hero-row" style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
           
-          <div class="hero-content">
-            <span class="hero-greeting">Merhaba, ben</span>
-            <h1 class="hero-heading">DOĞA DESTİCİ</h1>
-            <span class="hero-heading-subtitle">Öğrenci, Matematikçi, Bağımsız Araştırmacı, Gezgin</span>
+          <div class="hero-content" style="max-width: 900px; margin: 0 auto; width: 100%;">
+            <span class="hero-greeting" style="display: block; margin-bottom: 10px;">Merhaba, ben</span>
+            <h1 class="hero-heading" style="margin: 10px 0; font-weight: bold;">DOĞA DESTİCİ</h1>
+            <span class="hero-heading-subtitle" style="display: block; margin-top: 15px; font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;">Öğrenci, Matematikçi, Bağımsız Araştırmacı, Gezgin</span>
           </div>
         
-          <div class="hero-img">
-            <img src="img/hero/pp.JPEG" alt="Doğa Destici Profil Fotoğrafı" />
+          <div class="hero-img" style="display: flex; justify-content: center; align-items: center; margin: 40px auto 0 auto; width: 100%; max-width: 1500px; padding: 0 20px;">
+            <img src="img/hero/pp.JPEG" alt="Doğa Destici Profil Fotoğrafı" style="display: block; width: 100%; max-width: 1500px; height: auto; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); object-fit: cover;" />
           </div>
 
-          <div class="about-social-list">
-            <div class="social-links-row">
+          <div class="about-social-list" style="margin-top: 40px;">
+            <div class="social-links-row" style="display: flex; justify-content: center; align-items: center; gap: 25px;">
               <a href="https://www.linkedin.com/in/do%C4%9Fa-destici-2a244725b/?locale=tr" target="_blank"><img src="img/social_icons/linkedin.svg" alt="LinkedIn" /></a>
               <a href="https://www.instagram.com/thedoogaa/" target="_blank"><img src="img/social_icons/instagram.svg" alt="Instagram" /></a>
             </div>
@@ -206,38 +206,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="module" src="js/main.js"></script>
-    <script>
-      AOS.init();
-
-      function toggleCvMenu(event) {
-        event.stopPropagation();
-        var menu = document.getElementById("cvDropdownMenu");
-        menu.style.display = menu.style.display === "block" ? "none" : "block";
-      }
-
-      window.onclick = function() {
-        var menu = document.getElementById("cvDropdownMenu");
-        if (menu && menu.style.display === "block") {
-          menu.style.display = "none";
-        }
-      };
-
-      (function() {
-        const toggleBtn = document.getElementById('darkModeToggle');
-        if (!toggleBtn) return;
-        
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-          document.body.classList.add('dark-mode');
-          toggleBtn.textContent = '◒ LIGHT';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-          document.body.classList.toggle('dark-mode');
-          const isDark = document.body.classList.contains('dark-mode');
-          localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
-          toggleBtn.textContent = isDark ? '◒ LIGHT' : '◑ MODE';
-        });
-      })();
-    </script>
+    <script src="js/site.js"></script>
   </body>
 </html> 
