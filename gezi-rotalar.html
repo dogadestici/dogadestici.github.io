@@ -403,25 +403,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script>
-      AOS.init();
-
-      (function() {
-        const toggleBtn = document.getElementById('darkModeToggle');
-        if (!toggleBtn) return;
-
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-          document.body.classList.add('dark-mode');
-          toggleBtn.textContent = '◒ LIGHT';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-          document.body.classList.toggle('dark-mode');
-          const isDark = document.body.classList.contains('dark-mode');
-          localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
-          toggleBtn.textContent = isDark ? '◒ LIGHT' : '◑ MODE';
-        });
-      })();
-    </script>
+    <script src="js/site.js"></script>
   </body>
 </html> 
