@@ -269,6 +269,228 @@ print_results(sonuc)</code></pre>
         </div>
       </section>
 
+      <!-- SECTION: Yapay Zeka Destekli arXiv Arama Betiği -->
+      <section id="arxiv-api-script" style="margin-bottom: 50px;" data-aos="fade-up">
+        <h4 style="font-size: 1.25rem; font-weight: bold; margin: 35px 0 10px 0; color: var(--secondary-accent);">
+          Yapay Zeka Destekli Akıllı arXiv Makale Tarayıcısı
+        </h4>
+        
+        <p>
+          Akademik araştırmalarda en çok zaman alan şeylerden biri, yüzlerce makale arasında kaybolmadan tam olarak ihtiyacımız olan literatürü bulabilmektir. Klasik anahtar kelime aramaları bazen çok dar, bazen de çok genel sonuçlar verebiliyor. Bu süreci otomatize etmek ve bana özel bir <strong>"ilgili makale sıralama sistemi"</strong> kurmak için yapay zekadan yardım alarak Python’ın resmi <code>arxiv</code> kütüphanesini kullanan akıllı bir tarama betiği geliştirdik.
+        </p>
+
+        <p style="margin-top: 15px;">
+          <strong>Kod Nasıl Çalışıyor?</strong>
+        </p>
+        <ul style="list-style-type: square; padding-left: 25px; margin: 10px 0 20px 0; line-height: 1.8;">
+          <li><strong>Modüler Sorgu Yapısı:</strong> Ana konu ve alt konuları ayrıştırıp mantıksal bağlaçlarla dinamik sorgular oluşturur.</li>
+          <li><strong>Çift Kayıt Önleme (Deduplication):</strong> Farklı sorgularda denk gelen mükerrer makaleleri otomatik ayıklar.</li>
+          <li><strong>Bana Özel Puanlama (Relevance Scoring):</strong> Başlık ve özette geçen kritik terimlere göre makaleleri ağırlıklandırıp puanlar.</li>
+          <li><strong>Akıllı Sıralama:</strong> Tüm sonuçları en yüksek ilgi puanına ve en yeni yayın tarihine göre dizerek sunar.</li>
+        </ul>
+
+        <!-- KOD KUTUSU VE KOPYALAMA BUTONU -->
+        <div class="code-block-wrapper" style="position: relative; background: #1e1e1e; border-radius: 8px; padding: 15px; margin-top: 20px;">
+          <button class="copy-code-btn" onclick="copyArxivScriptCode()" style="position: absolute; top: 12px; right: 12px; background: var(--secondary-accent, #4A90E2); color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s;">📋 Kodu Kopyala</button>
+          
+          <pre style="margin: 0; overflow-x: auto; color: #d4d4d4; font-family: 'Fira Code', Consolas, monospace; font-size: 0.9rem; line-height: 1.5;"><code id="arxivScriptCodeBlock">import arxiv
+
+
+def fetch_arxiv_papers():
+    # ------------------------------------------------------------
+    # 1. ANA KONU TERİMLERİ
+    # ------------------------------------------------------------
+    # Buraya çalışmanın temel geometrisini veya ana konusunu yazıyoruz.
+    # ti: Başlıkta ara | abs: Özet metinde ara | all: Tüm alanlarda ara
+    main_topic_terms = ""
+
+    # ------------------------------------------------------------
+    # 2. BİRİNCİ ALT KONU TERİMLERİ
+    # ------------------------------------------------------------
+    first_subtopic_terms = ""
+
+    # ------------------------------------------------------------
+    # 3. İKİNCİ ALT KONU TERİMLERİ
+    # ------------------------------------------------------------
+    second_subtopic_terms = ""
+
+    # ------------------------------------------------------------
+    # 4. ÜÇÜNCÜ ALT KONU TERİMLERİ
+    # ------------------------------------------------------------
+    third_subtopic_terms = ""
+
+    # ------------------------------------------------------------
+    # 5. ARAMA SORGULARI (Dinamik Kombinasyonlar)
+    # ------------------------------------------------------------
+    queries = {}
+
+    # ------------------------------------------------------------
+    # 6. ARXIV İSTEMCİ AYARLARI (Nezaket & Bağlantı Yönetimi)
+    # ------------------------------------------------------------
+    # arXiv sunucularını yormamak adına istekler arasına 3 saniye gecikme ekliyoruz.
+    client = arxiv.Client(
+        page_size=100,
+        delay_seconds=3,
+        num_retries=3,
+    )
+
+    # Benzersiz makaleleri tutacağımız sözlük
+    unique_papers = {}
+
+    # ------------------------------------------------------------
+    # 7. SORGULARIN ÇALIŞTIRILMASI VE BENZERSİZLEŞTİRME
+    # ------------------------------------------------------------
+    for search_name, query in queries.items():
+        print("\n" + "=" * 100)
+        print(f"ARAMA BAŞLIĞI: {search_name}")
+        print("=" * 100)
+
+        search = arxiv.Search(
+            query=query,
+            max_results=100,
+            sort_by=arxiv.SortCriterion.Relevance,
+            sort_order=arxiv.SortOrder.Descending,
+        )
+
+        try:
+            results = list(client.results(search))
+        except Exception as error:
+            print(f"Sorgu çalıştırılırken hata oluştu: {error}")
+            continue
+
+        print(f"Bu sorguda bulunan sonuç sayısı: {len(results)}")
+
+        for paper in results:
+            paper_id = paper.entry_id.rstrip("/").split("/")[-1]
+
+            if paper_id not in unique_papers:
+                unique_papers[paper_id] = {
+                    "paper": paper,
+                    "matched_searches": [],
+                }
+
+            unique_papers[paper_id]["matched_searches"].append(
+                search_name
+            )
+
+    # ------------------------------------------------------------
+    # 8. SONUÇ KONTROLÜ
+    # ------------------------------------------------------------
+    print("\n" + "#" * 100)
+    print(f"TOPLAM BENZERSİZ MAKALE SAYISI: {len(unique_papers)}")
+    print("#" * 100)
+
+    if not unique_papers:
+        print("Girilen sorgularla bağlantılı makale bulunamadı.")
+        return
+
+    # ------------------------------------------------------------
+    # 9. İLGİ PUANI HESAPLAMA (Algoritmik Önceliklendirme)
+    # ------------------------------------------------------------
+    keyword_scores = {}
+    title_keyword_scores = {}
+
+    ranked_papers = []
+
+    for paper_id, data in unique_papers.items():
+        paper = data["paper"]
+
+        title = " ".join(paper.title.split()).lower()
+        summary = " ".join(paper.summary.split()).lower()
+        combined_text = f"{title} {summary}"
+
+        score = 0
+
+        for keyword, weight in keyword_scores.items():
+            if keyword.lower() in combined_text:
+                score += weight
+
+        for keyword, weight in title_keyword_scores.items():
+            if keyword.lower() in title:
+                score += weight
+
+        ranked_papers.append(
+            {
+                "score": score,
+                "paper": paper,
+                "matched_searches": data["matched_searches"],
+            }
+        )
+
+    # ------------------------------------------------------------
+    # 10. SONUÇLARIN SIRALANMASI
+    # ------------------------------------------------------------
+    ranked_papers.sort(
+        key=lambda item: (
+            item["score"],
+            item["paper"].published,
+        ),
+        reverse=True,
+    )
+
+    # ------------------------------------------------------------
+    # 11. SONUÇLARIN YAZDIRILMASI
+    # ------------------------------------------------------------
+    for index, item in enumerate(ranked_papers, start=1):
+        paper = item["paper"]
+        score = item["score"]
+
+        authors = ", ".join(
+            author.name for author in paper.authors
+        )
+
+        abstract = " ".join(paper.summary.split())
+        published = paper.published.strftime("%d %B %Y")
+        updated = paper.updated.strftime("%d %B %Y")
+
+        print("\n" + "-" * 100)
+        print(f"[{index}] İLGİ PUANI : {score}")
+        print(f"BAŞLIK          : {paper.title}")
+        print(f"YAZARLAR        : {authors}")
+        print(f"YAYIN TARİHİ    : {published}")
+        print(f"GÜNCELLEME      : {updated}")
+        print(f"ANA KATEGORİ    : {paper.primary_category}")
+
+        categories = ", ".join(paper.categories)
+        print(f"TÜM KATEGORİLER : {categories}")
+
+        print(f"ARXIV SAYFASI   : {paper.entry_id}")
+        print(f"PDF             : {paper.pdf_url}")
+
+        print(
+            "EŞLEŞEN ARAMALAR: "
+            + ", ".join(item["matched_searches"])
+        )
+
+        print(f"ÖZET            : {abstract}")
+        print("-" * 100)
+
+
+if __name__ == "__main__":
+    fetch_arxiv_papers()</code></pre>
+        </div>
+      </section>
+
+      <!-- KOPYALAMA BUTONU İÇİN JAVASCRIPT KODU -->
+      <script>
+        function copyArxivScriptCode() {
+          const codeText = document.getElementById("arxivScriptCodeBlock").innerText;
+          navigator.clipboard.writeText(codeText).then(() => {
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "Kopyalandı! ✓";
+            btn.style.background = "#2ea44f";
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.style.background = "var(--secondary-accent, #4A90E2)";
+            }, 2000);
+          }).catch(err => {
+            console.error("Kopyalama hatası: ", err);
+          });
+        }
+      </script>
+      
+
       <div class="collab-box" style="margin-top: 0; margin-bottom: 40px; padding: 20px;" data-aos="fade-up">
         <p style="font-style: italic; margin-bottom: 0;">
           <strong style="color: var(--secondary-accent);">[NOT]:</strong> Bu alandaki yazılımlar, kütüphaneler ve metodolojik kaynaklar süreç ilerledikçe düzenli olarak güncellenmektedir.
