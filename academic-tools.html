@@ -3,93 +3,287 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Araştırma Araçları & Kaynaklar - Doğa Destici</title>
+
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <style>
+      :root {
+        --tools-text: var(--text-color, #1f2937);
+        --tools-muted: var(--supportive-text-color, #5f6672);
+        --tools-code-bg: #f7f7f8;
+        --tools-code-text: #171717;
+        --tools-code-border: var(--primary-accent, #2563eb);
+        --tools-divider: rgba(31, 41, 55, 0.18);
+        --tools-button-bg: var(--primary-accent, #2563eb);
+        --tools-button-text: #ffffff;
+        --tools-inline-code-bg: rgba(37, 99, 235, 0.1);
+        --tools-inline-code-text: #1d4ed8;
+      }
+
+      body.dark-mode {
+        --tools-text: #f3f4f6;
+        --tools-muted: #c6cad1;
+        --tools-code-bg: #101214;
+        --tools-code-text: #f1f5f9;
+        --tools-code-border: #6ea8fe;
+        --tools-divider: rgba(255, 255, 255, 0.22);
+        --tools-button-bg: #f3f4f6;
+        --tools-button-text: #111827;
+        --tools-inline-code-bg: rgba(255, 255, 255, 0.12);
+        --tools-inline-code-text: #dbeafe;
+      }
+
       .projects-container {
+        width: 100%;
         max-width: 850px;
         margin: 0 auto;
-        padding: 120px 20px 80px 20px;
+        padding: 120px 20px 80px;
+        color: var(--tools-text);
       }
-      .tool-index {
-        font-weight: bold;
-        color: var(--secondary-accent);
-        margin-bottom: 12px;
-        font-size: 1.15rem;
+
+      .page-intro {
+        margin-bottom: 40px;
       }
-      .tool-list {
-        list-style-type: none;
-        padding-left: 0;
-      }
-      .tool-list li {
+
+      .page-title {
         margin-bottom: 15px;
-        line-height: 1.7;
-        text-align: justify;
+        font-size: clamp(1.8rem, 5vw, 2.2rem);
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
       }
-      .tool-list li strong {
+
+      .page-description {
+        color: var(--tools-muted);
+        font-size: 1.15rem;
+        line-height: 1.7;
+      }
+
+      .resource-section {
+        margin-bottom: 50px;
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .resource-section + .resource-section {
+        position: relative;
+        margin-top: 65px;
+        padding-top: 65px;
+      }
+
+      .resource-section + .resource-section::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--tools-divider) 12%,
+          var(--tools-divider) 88%,
+          transparent
+        );
+        content: "";
+      }
+
+      .section-title {
+        margin-bottom: 20px;
+        color: var(--primary-accent);
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.35;
+        text-transform: uppercase;
+      }
+
+      .subsection-title {
+        margin: 25px 0 10px;
+        color: var(--secondary-accent, #3b82f6);
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .resource-section > .subsection-title:first-child {
+        margin-top: 0;
+      }
+
+      .text-block {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .text-block p,
+      .resource-section p {
+        margin-bottom: 15px;
+      }
+
+      .feature-list {
+        margin: 10px 0 20px;
+        padding-left: 25px;
+        list-style-type: square;
+        line-height: 1.8;
+      }
+
+      .feature-list--spacious {
+        margin: 15px 0;
+        line-height: 2;
+      }
+
+      .feature-list li + li {
+        margin-top: 5px;
+      }
+
+      .text-block strong,
+      .resource-section strong {
         color: var(--primary-accent);
       }
 
-      /* Kopyalama Butonu ve Kod Kutusu Tasarımı */
+      body.dark-mode .text-block strong,
+      body.dark-mode .resource-section strong {
+        color: #ffffff;
+      }
+
+      .resource-section :not(pre) > code {
+        padding: 0.12em 0.35em;
+        border-radius: 4px;
+        background: var(--tools-inline-code-bg);
+        color: var(--tools-inline-code-text);
+        font-family: "Fira Code", Consolas, Monaco, monospace;
+        font-size: 0.9em;
+      }
+
+      .link-buttons-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .link-buttons-wrapper .btn {
+        margin: 0;
+      }
+
       .code-block-wrapper {
         position: relative;
         margin: 25px 0;
       }
+
       .code-block-wrapper pre {
-        background: var(--gray-color);
-        color: #1a1a1a;
-        padding: 25px 20px 20px 20px;
-        border: 2px solid var(--primary-accent);
-        border-radius: 8px;
+        margin: 0;
+        padding: 58px 20px 22px;
         overflow-x: auto;
-        font-family: monospace;
-        font-size: 0.95rem;
-        line-height: 1.5;
-        transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-      }
-      .copy-code-btn {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        background: var(--primary-accent);
-        color: #ffffff;
-        border: none;
-        padding: 6px 14px;
-        font-size: 0.85rem;
-        font-weight: bold;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.2s, opacity 0.2s, color 0.2s;
-        z-index: 10;
-      }
-      .copy-code-btn:hover {
-        opacity: 0.9;
+        border: 1px solid var(--tools-code-border);
+        border-radius: 8px;
+        background: var(--tools-code-bg);
+        color: var(--tools-code-text);
+        font-family: "Fira Code", Consolas, Monaco, monospace;
+        font-size: 0.88rem;
+        line-height: 1.6;
+        tab-size: 4;
+        transition:
+          color 0.3s ease,
+          border-color 0.3s ease,
+          background-color 0.3s ease;
       }
 
-      /* DARK MODE UYUMLULUK KURALLARI */
-      body.dark-mode .tool-list li strong {
-        color: #ffffff !important;
+      .code-block-wrapper pre code {
+        display: block;
+        min-width: max-content;
+        padding: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        white-space: pre;
       }
-      body.dark-mode .code-block-wrapper pre {
-        background: #111111 !important;
-        border-color: #ffffff !important;
-        color: #f0f0f0 !important;
+
+      .copy-code-btn {
+        position: absolute;
+        z-index: 2;
+        top: 12px;
+        right: 12px;
+        min-height: 34px;
+        padding: 7px 13px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background: var(--tools-button-bg);
+        color: var(--tools-button-text);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease,
+          background-color 0.3s ease,
+          color 0.3s ease;
       }
-      body.dark-mode .code-block-wrapper pre code {
-        color: #f0f0f0 !important;
+
+      .copy-code-btn:hover {
+        opacity: 0.88;
       }
-      body.dark-mode .copy-code-btn {
-        background: #ffffff !important;
-        color: #000000 !important;
+
+      .copy-code-btn:active {
+        transform: translateY(1px);
+      }
+
+      .copy-code-btn:focus-visible {
+        outline: 3px solid
+          color-mix(in srgb, var(--primary-accent) 40%, transparent);
+        outline-offset: 3px;
+      }
+
+      .copy-code-btn.is-copied {
+        background: #16803c;
+        color: #ffffff;
+      }
+
+      .copy-code-btn.is-error {
+        background: #b42318;
+        color: #ffffff;
+      }
+
+      @media (max-width: 600px) {
+        .projects-container {
+          padding: 100px 16px 60px;
+        }
+
+        .page-description {
+          font-size: 1.05rem;
+        }
+
+        .text-block,
+        .resource-section {
+          font-size: 1rem;
+        }
+
+        .resource-section + .resource-section {
+          margin-top: 50px;
+          padding-top: 50px;
+        }
+
+        .code-block-wrapper pre {
+          padding: 58px 14px 18px;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .code-block-wrapper pre,
+        .copy-code-btn {
+          transition: none;
+        }
       }
     </style>
   </head>
@@ -99,20 +293,56 @@
       <div class="container container-lg">
         <div class="header-nav">
           <a href="index.html" class="logo">DOĞA DESTİCİ</a>
-          <button id="nav-btn" class="nav-btn" aria-label="Menüyü Aç/Kapat">
-            <img id="nav-btn-img" src="img/icons/open.svg" alt="Menü" />
+
+          <button
+            id="nav-btn"
+            class="nav-btn"
+            type="button"
+            aria-label="Menüyü Aç/Kapat"
+            aria-controls="nav"
+            aria-expanded="false"
+          >
+            <img
+              id="nav-btn-img"
+              src="img/icons/open.svg"
+              alt=""
+              aria-hidden="true"
+            />
           </button>
+
           <nav id="nav" class="nav">
             <ul class="nav-list">
-              <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
-              <li class="nav-item"><a href="akademik.html" class="nav-link active">Akademik</a></li>
-              <li class="nav-item"><a href="sosyal.html" class="nav-link">Sosyal</a></li>
-              <li class="nav-item"><a href="gezi.html" class="nav-link">Gezi</a></li>
-              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-              <li class="nav-item"><a href="index.html#contact" class="nav-link">İletişim</a></li> 
-              <li class="nav-item"><a href="en/academic-tools.html" class="nav-link">🇬🇧EN</a></li> 
               <li class="nav-item">
-                <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
+                <a href="index.html" class="nav-link">Anasayfa</a>
+              </li>
+              <li class="nav-item">
+                <a href="akademik.html" class="nav-link active">Akademik</a>
+              </li>
+              <li class="nav-item">
+                <a href="sosyal.html" class="nav-link">Sosyal</a>
+              </li>
+              <li class="nav-item">
+                <a href="gezi.html" class="nav-link">Gezi</a>
+              </li>
+              <li class="nav-item">
+                <a href="blog.html" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#contact" class="nav-link">İletişim</a>
+              </li>
+              <li class="nav-item">
+                <a href="en/academic-tools.html" class="nav-link">🇬🇧 EN</a>
+              </li>
+              <li class="nav-item">
+                <button
+                  id="darkModeToggle"
+                  class="dark-toggle-btn"
+                  type="button"
+                  aria-label="Açık veya koyu temaya geç"
+                  aria-pressed="false"
+                >
+                  ◑ MODE
+                </button>
               </li>
             </ul>
           </nav>
@@ -120,68 +350,124 @@
       </div>
     </header>
 
-    <div class="projects-container">
-      <a href="akademik.html" class="back-btn">← Akademik Çalışmalara Dön</a>
+    <main class="projects-container">
+      <a href="akademik.html" class="back-btn">
+        ← Akademik Çalışmalara Dön
+      </a>
 
-      <div style="margin-bottom: 40px;" data-aos="fade-up">
-        <h2 style="font-size: 2.2rem; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Araştırma Araçları & Kaynaklar</h2>
-        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--supportive-text-color);">
-          Teorik fizik, diferansiyel geometri ve genel görelilik araştırmalarımda sembolik hesaplamaları yürütmek, modeller oluşturmak ve literatürü takip etmek için kullandığım analitik araçlar ve metodolojik altyapı.
+      <div class="page-intro" data-aos="fade-up">
+        <h1 class="page-title">Araştırma Araçları & Kaynaklar</h1>
+
+        <p class="page-description">
+          Teorik fizik, diferansiyel geometri ve genel görelilik
+          araştırmalarımda sembolik hesaplamaları yürütmek, modeller oluşturmak
+          ve literatürü takip etmek için kullandığım analitik araçlar ve
+          metodolojik altyapı.
         </p>
       </div>
 
-      <!-- SECTION: arXiv SUB & PYTHON FILTER -->
-      <section id="arxiv-filtering" style="margin-bottom: 50px;" data-aos="fade-up">
-        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: var(--primary-accent); text-transform: uppercase;">
+      <section
+        id="arxiv-filtering"
+        class="resource-section"
+        data-aos="fade-up"
+        aria-labelledby="arxiv-filtering-title"
+      >
+        <h2 id="arxiv-filtering-title" class="section-title">
           arXiv Aboneliği & Python ile Kişisel E-Posta Filtreleme
-        </h3>
-        
-        <div class="text-block" style="font-size: 1.1rem; line-height: 1.8;">
+        </h2>
+
+        <div class="text-block">
           <p>
-            Teorik fizik ve genel görelilik alanındaki güncel literatürü her gün düzenli olarak takip etmek için arXiv'in günlük e-posta yayın sistemini kullanıyorum. arXiv, seçtiğiniz alt kategorilerde her gün yayımlanan yeni makaleleri derli toplu bir liste olarak e-posta adresinize gönderir.
+            Teorik fizik ve genel görelilik alanındaki güncel literatürü her
+            gün düzenli olarak takip etmek için arXiv'in günlük e-posta yayın
+            sistemini kullanıyorum. arXiv, seçtiğiniz alt kategorilerde her gün
+            yayımlanan yeni makaleleri derli toplu bir liste olarak e-posta
+            adresinize gönderir.
           </p>
 
-          <h4 style="font-size: 1.25rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
+          <h3 class="subsection-title">
             arXiv Günlük Bültenine Nasıl Abone Olunur?
-          </h4>
+          </h3>
+
           <p>
-            Her gün yeni çıkan makalelerin e-posta kutunuza gelmesi için şu adımları takip edebilirsiniz:
+            Her gün yeni çıkan makalelerin e-posta kutunuza gelmesi için şu
+            adımları takip edebilirsiniz:
           </p>
-          <ul style="list-style-type: square; padding-left: 25px; margin: 15px 0; line-height: 2;">
+
+          <ul class="feature-list feature-list--spacious">
             <li>
-              <strong>Hesap Oluşturun / Giriş Yapın:</strong> <a href="https://arxiv.org/login" target="_blank" rel="noopener">arXiv Giriş Sayfası</a> üzerinden hesabınıza giriş yapın.
+              <strong>Hesap Oluşturun / Giriş Yapın:</strong>
+              <a
+                href="https://arxiv.org/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                arXiv Giriş Sayfası
+              </a>
+              üzerinden hesabınıza giriş yapın.
             </li>
+
             <li>
-              <strong>Kategorilere Abone Olun:</strong> <a href="https://arxiv.org/user/subscriptions" target="_blank" rel="noopener">arXiv Abonelik Yönetimi</a> sayfasına gidin. Buradan ilgilendiğiniz alanları—örneğin <strong>Mathematical Physics (math-ph)</strong> ve <strong>General Relativity and Quantum Cosmology (gr-qc)</strong>—seçerek e-posta bildirimlerini aktif hale getirin.
+              <strong>Kategorilere Abone Olun:</strong>
+              <a
+                href="https://arxiv.org/user/subscriptions"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                arXiv Abonelik Yönetimi
+              </a>
+              sayfasına gidin. Buradan ilgilendiğiniz alanları—örneğin
+              <strong>Mathematical Physics (math-ph)</strong> ve
+              <strong>
+                General Relativity and Quantum Cosmology (gr-qc)
+              </strong>
+              —seçerek e-posta bildirimlerini aktif hale getirin.
             </li>
+
             <li>
-              <strong>Günlük Bülten:</strong> Hafta içi her gün, seçtiğiniz kategorilerde yayımlanan tüm pre-print makalelerin başlıklarını, özetlerini, yazarlarını ve doğrudan bağlantılarını içeren otomatik bir e-posta alırsınız.
+              <strong>Günlük Bülten:</strong> Hafta içi her gün, seçtiğiniz
+              kategorilerde yayımlanan tüm pre-print makalelerin başlıklarını,
+              özetlerini, yazarlarını ve doğrudan bağlantılarını içeren
+              otomatik bir e-posta alırsınız.
             </li>
           </ul>
 
-          <h4 style="font-size: 1.25rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
+          <h3 class="subsection-title">
             Python ile Otomatik E-Posta Filtreleme
-          </h4>
+          </h3>
+
           <p>
-            Gelen günlük bültende çalışma alanımın dışında kalan onlarca makaleyi elerken vakit kaybetmemek için geliştirdiğim kişisel bir Python betiği kullanıyorum. Gelen ham e-posta metnini VS Code içerisindeki koda kopyalayıp yapıştırdığımda, betik makaleleri ilgi alanlarına göre kategorize ediyor ve başlık, yazar ve bağlantı bilgileriyle ekrana yazdırıyor.
+            Gelen günlük bültende çalışma alanımın dışında kalan onlarca
+            makaleyi elerken vakit kaybetmemek için geliştirdiğim kişisel bir
+            Python betiği kullanıyorum. Gelen ham e-posta metnini VS Code
+            içerisindeki koda kopyalayıp yapıştırdığımda, betik makaleleri ilgi
+            alanlarına göre kategorize ediyor ve başlık, yazar ve bağlantı
+            bilgileriyle ekrana yazdırıyor.
           </p>
 
-          <!-- KOD KUTUSU VE KOPYALAMA BUTONU -->
           <div class="code-block-wrapper">
-            <button class="copy-code-btn" onclick="copyPythonCode()">📋 Kodu Kopyala</button>
+            <button
+              class="copy-code-btn"
+              type="button"
+              data-copy-target="pythonCodeBlock"
+              aria-label="Python e-posta filtreleme kodunu kopyala"
+            >
+              📋 Kodu Kopyala
+            </button>
+
             <pre><code id="pythonCodeBlock">import re
 
 INTERESTS = {
     "Superintegrability & Integrable Systems": [
-        "superintegrable", "superintegrability", "liouville integrability", 
+        "superintegrable", "superintegrability", "liouville integrability",
         "integrable system", "lax pair", "hamilton-jacobi", "separation of variables"
     ],
     "Clifford Structures & Killing Geometries": [
-        "clifford algebroid", "killing-yano", "super-carter", "carter constant", 
+        "clifford algebroid", "killing-yano", "super-carter", "carter constant",
         "spinor", "killing tensor", "hidden symmetry"
     ],
     "Linearization Instability & Gravitational Perturbations": [
-        "linearization instability", "penrose diagram", "perturbed kerr", 
+        "linearization instability", "penrose diagram", "perturbed kerr",
         "perturbed schwarzschild", "linearized gravity", "gravitational perturbations"
     ],
     "Conserved Charges & Modified Gravity": [
@@ -190,156 +476,220 @@ INTERESTS = {
     ]
 }
 
+
 def analyze_expanded_arxiv_mail(raw_text):
-    raw_papers = re.split(r'-{10,}', raw_text)
-    
-    categorized_papers = {cat: [] for cat in INTERESTS}
+    raw_papers = re.split(r"-{10,}", raw_text)
+
+    categorized_papers = {category: [] for category in INTERESTS}
     categorized_papers["Diğer (İlgi Alanı Dışı)"] = []
 
     for block in raw_papers:
         if not block.strip() or "Title:" not in block:
             continue
-            
-        title_match = re.search(r'Title:\s*(.*?)(?=\n(?:Authors:|Categories:|Comments:|Report-no:)|$)', block, re.DOTALL)
-        authors_match = re.search(r'Authors:\s*(.*?)(?=\n(?:Comments:|Categories:|MSC-class:|Report-no:|\\)|$)', block, re.DOTALL)
-        
-        title = title_match.group(1).replace('\n', ' ').strip() if title_match else "Bilinmeyen Başlık"
-        authors_raw = authors_match.group(1).replace('\n', ' ').strip() if authors_match else "Bilinmeyen Yazarlar"
-        
-        link_match = re.search(r'https://arxiv\.org/abs/\d{4}\.\d{4,5}', block)
-        
+
+        title_match = re.search(
+            r"Title:\s*(.*?)(?=\n(?:Authors:|Categories:|Comments:|Report-no:)|$)",
+            block,
+            re.DOTALL,
+        )
+        authors_match = re.search(
+            r"Authors:\s*(.*?)(?=\n(?:Comments:|Categories:|MSC-class:|Report-no:|\\)|$)",
+            block,
+            re.DOTALL,
+        )
+
+        title = (
+            title_match.group(1).replace("\n", " ").strip()
+            if title_match
+            else "Bilinmeyen Başlık"
+        )
+
+        authors_raw = (
+            authors_match.group(1).replace("\n", " ").strip()
+            if authors_match
+            else "Bilinmeyen Yazarlar"
+        )
+
+        link_match = re.search(
+            r"https://arxiv\.org/abs/\d{4}\.\d{4,5}",
+            block,
+        )
+
         if link_match:
             paper_link = link_match.group(0)
         else:
-            id_match = re.search(r'arXiv:\d{4}\.\d{4,5}', block)
-            paper_link = f"https://arxiv.org/abs/{id_match.group(0).split(':')[1]}" if id_match else "Link Bulunamadı"
-        
-        authors_cleaned = re.sub(r'\(.*?\)', '', authors_raw)
-        clean_authors = [a.strip() for a in re.split(r',| and ', authors_cleaned) if a.strip()]
-        
+            id_match = re.search(r"arXiv:\d{4}\.\d{4,5}", block)
+            paper_link = (
+                f"https://arxiv.org/abs/{id_match.group(0).split(':')[1]}"
+                if id_match
+                else "Link Bulunamadı"
+            )
+
+        authors_cleaned = re.sub(r"\(.*?\)", "", authors_raw)
+        clean_authors = [
+            author.strip()
+            for author in re.split(r",| and ", authors_cleaned)
+            if author.strip()
+        ]
+
         block_lower = block.lower()
         matched_any_category = False
-        
+
         for category, keywords in INTERESTS.items():
-            if any(kw in block_lower for kw in keywords):
-                categorized_papers[category].append({
-                    "title": title,
-                    "authors": clean_authors,
-                    "link": paper_link
-                })
+            if any(keyword in block_lower for keyword in keywords):
+                categorized_papers[category].append(
+                    {
+                        "title": title,
+                        "authors": clean_authors,
+                        "link": paper_link,
+                    }
+                )
                 matched_any_category = True
                 break
-                
+
         if not matched_any_category:
-            categorized_papers["Diğer (İlgi Alanı Dışı)"].append({
-                "title": title,
-                "authors": clean_authors,
-                "link": paper_link
-            })
-            
+            categorized_papers["Diğer (İlgi Alanı Dışı)"].append(
+                {
+                    "title": title,
+                    "authors": clean_authors,
+                    "link": paper_link,
+                }
+            )
+
     return categorized_papers
+
 
 def print_results(categorized_data):
     for category, papers in categorized_data.items():
         if not papers:
             continue
+
         print(f"\n=== {category} ({len(papers)} Makale) ===")
-        for idx, paper in enumerate(papers, 1):
-            authors_str = ", ".join(paper['authors'])
-            print(f"{idx}. Başlık: {paper['title']}")
+
+        for index, paper in enumerate(papers, start=1):
+            authors_str = ", ".join(paper["authors"])
+
+            print(f"{index}. Başlık: {paper['title']}")
             print(f"   Yazarlar: {authors_str}")
             print(f"   Link: {paper['link']}")
             print("-" * 40)
 
-mail_icerigi = r''' 
-\\
 
-'''
+mail_icerigi = r"""
+E-POSTA İÇERİĞİNİ BURAYA YAPIŞTIRIN
+"""
 
 sonuc = analyze_expanded_arxiv_mail(mail_icerigi)
 print_results(sonuc)</code></pre>
           </div>
 
-          <!-- TEK ABONELİK BUTONU -->
-          <div class="link-buttons-wrapper" style="display: flex; justify-content: center; margin-top: 30px;">
-            <a href="https://arxiv.org/user/subscriptions" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0;">
+          <div class="link-buttons-wrapper">
+            <a
+              href="https://arxiv.org/user/subscriptions"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-white"
+            >
               arXiv Aboneliklerini Yönet ↗
             </a>
           </div>
         </div>
       </section>
 
-      <!-- SECTION: Yapay Zeka Destekli arXiv Arama Betiği -->
-      <section id="arxiv-api-script" style="margin-bottom: 50px;" data-aos="fade-up">
-        <h4 style="font-size: 1.25rem; font-weight: bold; margin: 35px 0 10px 0; color: var(--secondary-accent, #3b82f6);">
+      <section
+        id="arxiv-api-script"
+        class="resource-section"
+        data-aos="fade-up"
+        aria-labelledby="arxiv-api-title"
+      >
+        <h2 id="arxiv-api-title" class="section-title">
           Yapay Zeka Destekli Akıllı arXiv Makale Tarayıcısı
-        </h4>
-        
+        </h2>
+
         <p>
-          Akademik araştırmalarda en çok zaman alan şeylerden biri, yüzlerce makale arasında kaybolmadan tam olarak ihtiyacımız olan literatürü bulabilmektir. Klasik anahtar kelime aramaları bazen çok dar, bazen de çok genel sonuçlar verebiliyor. Bu süreci otomatize etmek ve bana özel bir <strong>"ilgili makale sıralama sistemi"</strong> kurmak için yapay zekadan yardım alarak Python’ın resmi <code>arxiv</code> kütüphanesini kullanan akıllı bir tarama betiği geliştirdik.
+          Akademik araştırmalarda en çok zaman alan şeylerden biri, yüzlerce
+          makale arasında kaybolmadan tam olarak ihtiyacımız olan literatürü
+          bulabilmektir. Klasik anahtar kelime aramaları bazen çok dar, bazen
+          de çok genel sonuçlar verebiliyor. Bu süreci otomatize etmek ve bana
+          özel bir <strong>"ilgili makale sıralama sistemi"</strong> kurmak
+          için yapay zekadan yardım alarak Python’ın resmi
+          <code>arxiv</code> kütüphanesini kullanan akıllı bir tarama betiği
+          geliştirdik.
         </p>
 
-        <p style="margin-top: 15px;">
-          <strong>Kod Nasıl Çalışıyor?</strong>
-        </p>
-        <ul style="list-style-type: square; padding-left: 25px; margin: 10px 0 20px 0; line-height: 1.8;">
-          <li><strong>Modüler Sorgu Yapısı:</strong> Ana konu ve alt konuları ayrıştırıp mantıksal bağlaçlarla dinamik sorgular oluşturur.</li>
-          <li><strong>Çift Kayıt Önleme (Deduplication):</strong> Farklı sorgularda denk gelen mükerrer makaleleri otomatik ayıklar.</li>
-          <li><strong>Bana Özel Puanlama (Relevance Scoring):</strong> Başlık ve özette geçen kritik terimlere göre makaleleri ağırlıklandırıp puanlar.</li>
-          <li><strong>Akıllı Sıralama:</strong> Tüm sonuçları en yüksek ilgi puanına ve en yeni yayın tarihine göre dizerek sunar.</li>
+        <h3 class="subsection-title">Kod Nasıl Çalışıyor?</h3>
+
+        <ul class="feature-list">
+          <li>
+            <strong>Modüler Sorgu Yapısı:</strong> Ana konu ve alt konuları
+            ayrıştırıp mantıksal bağlaçlarla dinamik sorgular oluşturur.
+          </li>
+          <li>
+            <strong>Çift Kayıt Önleme (Deduplication):</strong> Farklı
+            sorgularda denk gelen mükerrer makaleleri otomatik ayıklar.
+          </li>
+          <li>
+            <strong>Bana Özel Puanlama (Relevance Scoring):</strong> Başlık ve
+            özette geçen kritik terimlere göre makaleleri ağırlıklandırıp
+            puanlar.
+          </li>
+          <li>
+            <strong>Akıllı Sıralama:</strong> Tüm sonuçları en yüksek ilgi
+            puanına ve en yeni yayın tarihine göre dizerek sunar.
+          </li>
         </ul>
 
-        <!-- KOD KUTUSU VE KOPYALAMA BUTONU (Sabit Kontrastlı Koyu Tema) -->
-        <div class="code-block-wrapper" style="position: relative; background-color: #1e1e1e !important; border: 1px solid #333333; border-radius: 8px; padding: 20px; margin-top: 20px;">
-          <button class="copy-code-btn" onclick="copyArxivScriptCode(this)" style="position: absolute; top: 12px; right: 12px; background-color: #2563eb; color: #ffffff !important; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: background-color 0.2s ease;">📋 Kodu Kopyala</button>
-          
-          <pre style="margin: 0; overflow-x: auto; background: transparent; padding: 0;"><code id="arxivScriptCodeBlock" style="color: #d4d4d4 !important; font-family: 'Fira Code', Consolas, Monaco, monospace; font-size: 0.88rem; line-height: 1.6; display: block; white-space: pre;">import arxiv
+        <div class="code-block-wrapper">
+          <button
+            class="copy-code-btn"
+            type="button"
+            data-copy-target="arxivScriptCodeBlock"
+            aria-label="Akıllı arXiv tarayıcı kodunu kopyala"
+          >
+            📋 Kodu Kopyala
+          </button>
+
+          <pre><code id="arxivScriptCodeBlock">import arxiv
 
 
 def fetch_arxiv_papers():
-    # ------------------------------------------------------------
-    # 1. ANA KONU TERİMLERİ
-    # ------------------------------------------------------------
-    # Buraya çalışmanın temel geometrisini veya ana konusunu yazıyoruz.
-    # ti: Başlıkta ara | abs: Özet metinde ara | all: Tüm alanlarda ara
     main_topic_terms = ""
-
-    # ------------------------------------------------------------
-    # 2. BİRİNCİ ALT KONU TERİMLERİ
-    # ------------------------------------------------------------
     first_subtopic_terms = ""
-
-    # ------------------------------------------------------------
-    # 3. İKİNCİ ALT KONU TERİMLERİ
-    # ------------------------------------------------------------
     second_subtopic_terms = ""
-
-    # ------------------------------------------------------------
-    # 4. ÜÇÜNCÜ ALT KONU TERİMLERİ
-    # ------------------------------------------------------------
     third_subtopic_terms = ""
 
-    # ------------------------------------------------------------
-    # 5. ARAMA SORGULARI (Dinamik Kombinasyonlar)
-    # ------------------------------------------------------------
     queries = {}
 
-    # ------------------------------------------------------------
-    # 6. ARXIV İSTEMCİ AYARLARI (Nezaket & Bağlantı Yönetimi)
-    # ------------------------------------------------------------
-    # arXiv sunucularını yormamak adına istekler arasına 3 saniye gecikme ekliyoruz.
+    if main_topic_terms:
+        queries["Ana konu"] = main_topic_terms
+
+    if main_topic_terms and first_subtopic_terms:
+        queries["Ana konu + Birinci alt konu"] = (
+            f"({main_topic_terms}) AND ({first_subtopic_terms})"
+        )
+
+    if main_topic_terms and second_subtopic_terms:
+        queries["Ana konu + İkinci alt konu"] = (
+            f"({main_topic_terms}) AND ({second_subtopic_terms})"
+        )
+
+    if main_topic_terms and third_subtopic_terms:
+        queries["Ana konu + Üçüncü alt konu"] = (
+            f"({main_topic_terms}) AND ({third_subtopic_terms})"
+        )
+
+    if not queries:
+        print("En az bir arama terimi veya sorgusu tanımlamalısınız.")
+        return
+
     client = arxiv.Client(
         page_size=100,
         delay_seconds=3,
         num_retries=3,
     )
 
-    # Benzersiz makaleleri tutacağımız sözlük
     unique_papers = {}
 
-    # ------------------------------------------------------------
-    # 7. SORGULARIN ÇALIŞTIRILMASI VE BENZERSİZLEŞTİRME
-    # ------------------------------------------------------------
     for search_name, query in queries.items():
         print("\n" + "=" * 100)
         print(f"ARAMA BAŞLIĞI: {search_name}")
@@ -369,13 +719,8 @@ def fetch_arxiv_papers():
                     "matched_searches": [],
                 }
 
-            unique_papers[paper_id]["matched_searches"].append(
-                search_name
-            )
+            unique_papers[paper_id]["matched_searches"].append(search_name)
 
-    # ------------------------------------------------------------
-    # 8. SONUÇ KONTROLÜ
-    # ------------------------------------------------------------
     print("\n" + "#" * 100)
     print(f"TOPLAM BENZERSİZ MAKALE SAYISI: {len(unique_papers)}")
     print("#" * 100)
@@ -384,12 +729,8 @@ def fetch_arxiv_papers():
         print("Girilen sorgularla bağlantılı makale bulunamadı.")
         return
 
-    # ------------------------------------------------------------
-    # 9. İLGİ PUANI HESAPLAMA (Algoritmik Önceliklendirme)
-    # ------------------------------------------------------------
     keyword_scores = {}
     title_keyword_scores = {}
-
     ranked_papers = []
 
     for paper_id, data in unique_papers.items():
@@ -417,9 +758,6 @@ def fetch_arxiv_papers():
             }
         )
 
-    # ------------------------------------------------------------
-    # 10. SONUÇLARIN SIRALANMASI
-    # ------------------------------------------------------------
     ranked_papers.sort(
         key=lambda item: (
             item["score"],
@@ -428,17 +766,11 @@ def fetch_arxiv_papers():
         reverse=True,
     )
 
-    # ------------------------------------------------------------
-    # 11. SONUÇLARIN YAZDIRILMASI
-    # ------------------------------------------------------------
     for index, item in enumerate(ranked_papers, start=1):
         paper = item["paper"]
         score = item["score"]
 
-        authors = ", ".join(
-            author.name for author in paper.authors
-        )
-
+        authors = ", ".join(author.name for author in paper.authors)
         abstract = " ".join(paper.summary.split())
         published = paper.published.strftime("%d %B %Y")
         updated = paper.updated.strftime("%d %B %Y")
@@ -453,63 +785,135 @@ def fetch_arxiv_papers():
 
         categories = ", ".join(paper.categories)
         print(f"TÜM KATEGORİLER : {categories}")
-
         print(f"ARXIV SAYFASI   : {paper.entry_id}")
         print(f"PDF             : {paper.pdf_url}")
-
         print(
             "EŞLEŞEN ARAMALAR: "
             + ", ".join(item["matched_searches"])
         )
-
         print(f"ÖZET            : {abstract}")
-        print("-" * 100)
 
 
 if __name__ == "__main__":
     fetch_arxiv_papers()</code></pre>
         </div>
-      </section>
 
-      <!-- JAVASCRIPT KOPYALAMA FONKSİYONU -->
-      <script>
-        function copyArxivScriptCode(buttonElement) {
-          const codeText = document.getElementById("arxivScriptCodeBlock").innerText;
-          navigator.clipboard.writeText(codeText).then(() => {
-            const originalText = buttonElement.innerText;
-            buttonElement.innerText = "Kopyalandı! ✓";
-            buttonElement.style.backgroundColor = "#16a34a";
-            setTimeout(() => {
-              buttonElement.innerText = originalText;
-              buttonElement.style.backgroundColor = "#2563eb";
-            }, 2000);
-          }).catch(err => {
-            console.error("Kopyalama hatası: ", err);
-          });
-        }
-      </script> 
+        <h3 class="subsection-title">Kurulum ve Kullanım</h3>
 
-
-      <div class="collab-box" style="margin-top: 0; margin-bottom: 40px; padding: 20px;" data-aos="fade-up">
-        <p style="font-style: italic; margin-bottom: 0;">
-          <strong style="color: var(--secondary-accent);">[NOT]:</strong> Bu alandaki yazılımlar, kütüphaneler ve metodolojik kaynaklar süreç ilerledikçe düzenli olarak güncellenmektedir.
+        <p>
+          Betiği kullanmadan önce resmi Python istemcisini aşağıdaki komutla
+          kurabilirsiniz:
         </p>
-      </div>
-    </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
+        <div class="code-block-wrapper">
+          <button
+            class="copy-code-btn"
+            type="button"
+            data-copy-target="installCodeBlock"
+            aria-label="Kurulum komutunu kopyala"
+          >
+            📋 Kodu Kopyala
+          </button>
+
+          <pre><code id="installCodeBlock">pip install arxiv</code></pre>
         </div>
-      </div>
-    </footer>
+
+        <p>
+          Daha sonra ana konu, alt konu, sorgu ve puanlama sözlüklerini kendi
+          araştırma alanınıza göre doldurarak betiği çalıştırabilirsiniz.
+        </p>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/site.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.AOS) {
+          AOS.init({
+            duration: 700,
+            once: true,
+            offset: 50,
+          });
+        }
+
+        const copyButtons = document.querySelectorAll("[data-copy-target]");
+
+        copyButtons.forEach((button) => {
+          button.addEventListener("click", async () => {
+            const targetId = button.dataset.copyTarget;
+            const codeBlock = document.getElementById(targetId);
+
+            if (!codeBlock) {
+              showCopyStatus(button, "Hedef bulunamadı", "is-error");
+              return;
+            }
+
+            try {
+              await copyText(codeBlock.textContent);
+              showCopyStatus(button, "✓ Kopyalandı", "is-copied");
+            } catch (error) {
+              showCopyStatus(button, "Kopyalanamadı", "is-error");
+            }
+          });
+        });
+
+        function copyText(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+          }
+
+          return new Promise((resolve, reject) => {
+            const textArea = document.createElement("textarea");
+
+            textArea.value = text;
+            textArea.setAttribute("readonly", "");
+            textArea.style.position = "fixed";
+            textArea.style.top = "-9999px";
+            textArea.style.left = "-9999px";
+
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            try {
+              const copied = document.execCommand("copy");
+
+              if (copied) {
+                resolve();
+              } else {
+                reject(new Error("Kopyalama başarısız."));
+              }
+            } catch (error) {
+              reject(error);
+            } finally {
+              textArea.remove();
+            }
+          });
+        }
+
+        function showCopyStatus(button, message, stateClass) {
+          const originalText =
+            button.dataset.originalText || button.textContent.trim();
+
+          button.dataset.originalText = originalText;
+          button.textContent = message;
+          button.classList.remove("is-copied", "is-error");
+          button.classList.add(stateClass);
+
+          window.clearTimeout(button.copyStatusTimer);
+
+          button.copyStatusTimer = window.setTimeout(() => {
+            button.textContent = originalText;
+            button.classList.remove("is-copied", "is-error");
+          }, 1800);
+        }
+      });
+    </script>
   </body>
-</html>  
+</html> 
