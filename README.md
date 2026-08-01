@@ -1,6 +1,5 @@
 # Doğa Destici — Kişisel Web Sitesi
 
-![Site Önizleme](portfolio_preview.jpg)
 
 Doğa Destici'nin kişisel tanıtım ve akademik paylaşım sitesi. Tamamen statik HTML, CSS ve JavaScript ile geliştirilmiş, GitHub Pages üzerinde yayınlanan, iki dilli (TR/EN) bir portfolyo ve blog sitesidir.
 
