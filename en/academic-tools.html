@@ -21,7 +21,7 @@
       :root {
         --tools-text: var(--text-color, #1f2937);
         --tools-muted: var(--supportive-text-color, #5f6672);
-        --tools-code-bg: #f7f7f8;
+        --tools-code-bg: #eeeeee;
         --tools-code-text: #171717;
         --tools-code-border: var(--primary-accent, #2563eb);
         --tools-divider: rgba(31, 41, 55, 0.18);
@@ -356,19 +356,25 @@
           literature in my research on theoretical physics, differential
           geometry, and general relativity.
         </p>
+        <p class="page-description">
+          <strong>My Research Workflow:</strong> I generally follow new work
+          through arXiv, filter relevant papers with Python scripts, explore
+          citation connections with Litmaps, organize my notes in Overleaf,
+          and prepare bibliographies with BibGuru.
+        </p>
       </div>
 
-      <section
+      <details
         id="arxiv-filtering"
-        class="resource-section"
+        class="resource-accordion"
         data-aos="fade-up"
         aria-labelledby="arxiv-filtering-title"
       >
-        <h2 id="arxiv-filtering-title" class="section-title">
-          arXiv Subscriptions & Personal Email Filtering with Python
-        </h2>
+        <summary id="arxiv-filtering-title" class="resource-accordion__summary">
+          arXiv - Subscription
+        </summary>
 
-        <div class="text-block">
+        <div class="resource-accordion__content text-block">
           <p>
             I use arXiv's daily email announcement system to follow the latest
             literature in theoretical physics and general relativity on a
@@ -424,6 +430,20 @@
             </li>
           </ul>
 
+        </div>
+      </details>
+
+      <details
+        id="arxiv-python-filtering"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="arxiv-python-filtering-title"
+      >
+        <summary id="arxiv-python-filtering-title" class="resource-accordion__summary">
+          arXiv - Python Filtering
+        </summary>
+
+        <div class="resource-accordion__content text-block">
           <h3 class="subsection-title">
             Automated Email Filtering with Python
           </h3>
@@ -584,18 +604,10 @@ print_results(results)</code></pre>
               Manage arXiv Subscriptions ↗
             </a>
           </div>
-        </div>
-      </section>
 
-      <section
-        id="arxiv-api-script"
-        class="resource-section"
-        data-aos="fade-up"
-        aria-labelledby="arxiv-api-title"
-      >
-        <h2 id="arxiv-api-title" class="section-title">
-          AI-Assisted Intelligent arXiv Paper Scanner
-        </h2>
+          <h3 class="subsection-title">
+            AI-Assisted Intelligent arXiv Paper Scanner
+          </h3>
 
         <p>
           One of the most time-consuming aspects of academic research is
@@ -816,7 +828,116 @@ if __name__ == "__main__":
           scoring dictionaries according to your own research field before
           running the script.
         </p>
-      </section>
+        </div>
+      </details>
+
+      <details
+        id="overleaf"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="overleaf-title"
+      >
+        <summary id="overleaf-title" class="resource-accordion__summary">
+          Overleaf
+        </summary>
+
+        <div class="resource-accordion__content text-block">
+          <p>
+            I use <strong>Overleaf</strong> to organize my academic notes,
+            mathematical derivations, and project documents.
+          </p>
+          <p>
+            After learning the basic structure and workflow of LaTeX, I prefer
+            not to write long pieces of code entirely by hand. Instead, I give
+            my own notes and equations to an AI system and ask it to convert
+            them into LaTeX code. I then check the generated code in Overleaf
+            and edit it when necessary.
+          </p>
+          <p>
+            This approach saves time, especially with dense mathematical
+            content, and allows me to focus primarily on the underlying
+            physical and mathematical ideas.
+          </p>
+          <div class="link-buttons-wrapper">
+            <a
+              href="https://www.overleaf.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-white"
+            >
+              Overleaf ↗
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details
+        id="litmaps"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="litmaps-title"
+      >
+        <summary id="litmaps-title" class="resource-accordion__summary">
+          Litmaps
+        </summary>
+
+        <div class="resource-accordion__content text-block">
+          <p>
+            During a literature review, I use <strong>Litmaps</strong> to find
+            related studies starting from an important paper.
+          </p>
+          <p>
+            Being able to follow citation relationships visually makes it
+            easier to discover earlier work and later developments in a topic.
+            I find it especially useful for seeing chains of papers when
+            entering a new research area.
+          </p>
+          <div class="link-buttons-wrapper">
+            <a
+              href="https://www.litmaps.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-white"
+            >
+              Litmaps ↗
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details
+        id="bibguru"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="bibguru-title"
+      >
+        <summary id="bibguru-title" class="resource-accordion__summary">
+          BibGuru
+        </summary>
+
+        <div class="resource-accordion__content text-block">
+          <p>
+            I use <strong>BibGuru</strong> when creating bibliographies and
+            references.
+          </p>
+          <p>
+            It helps me quickly organize the bibliographic information for
+            articles, books, and other academic sources and convert it into
+            the appropriate reference format. It is particularly useful for
+            speeding up reference management in documents prepared with LaTeX.
+          </p>
+          <div class="link-buttons-wrapper">
+            <a
+              href="https://www.bibguru.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-white"
+            >
+              BibGuru ↗
+            </a>
+          </div>
+        </div>
+      </details>
     </main>
 
     <script src="../js/main.js"></script>

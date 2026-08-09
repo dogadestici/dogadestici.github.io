@@ -10,9 +10,9 @@
   --supportive-text-color: #1a1a1a;
   --gray-text-color: #444444;
   --white-color: #ffffff;
-  --gray-color: #f8f9fa;
+  --gray-color: #eeeeee;
   --gray-color-2: #111111;
-  --gray-color-3: #f8f9fa;
+  --gray-color-3: #eeeeee;
   --color-preloader-bg: var(--white-color);
   --color-dots: #990000;
 }
@@ -631,6 +631,120 @@ a:hover {
   border-bottom: 1px solid var(--primary-accent);
 }
 
+/* Native accordion components used by academic tools and blog pages */
+.resource-accordion,
+.academic-accordion {
+  margin: 0 0 18px;
+  border: 2px solid var(--primary-accent);
+  border-radius: 10px;
+  background: var(--gray-color);
+  overflow: hidden;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.resource-accordion__summary,
+.academic-accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+  color: var(--primary-accent);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.resource-accordion__summary::-webkit-details-marker,
+.academic-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.resource-accordion__summary::after,
+.academic-accordion__summary::after {
+  flex: 0 0 auto;
+  color: var(--secondary-accent);
+  content: "⌄";
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.resource-accordion[open] > .resource-accordion__summary::after,
+.academic-accordion[open] > .academic-accordion__summary::after {
+  transform: rotate(180deg);
+}
+
+.resource-accordion__summary:hover,
+.academic-accordion__summary:hover {
+  color: var(--secondary-accent);
+}
+
+.resource-accordion__summary:focus-visible,
+.academic-accordion__summary:focus-visible {
+  outline: 3px solid var(--secondary-accent);
+  outline-offset: -3px;
+}
+
+.resource-accordion__content,
+.academic-accordion__content {
+  padding: 26px 30px 30px;
+  border-top: 1px solid color-mix(in srgb, var(--primary-accent) 35%, transparent);
+}
+
+.resource-accordion__content p,
+.academic-accordion__content p {
+  margin-bottom: 15px;
+}
+
+.resource-accordion__content a,
+.academic-accordion__content a {
+  color: var(--secondary-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.resource-accordion__content :not(pre) > code,
+.academic-accordion__content :not(pre) > code {
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+  font-family: "Fira Code", Consolas, Monaco, monospace;
+  font-size: 0.9em;
+}
+
+body.dark-mode .resource-accordion,
+body.dark-mode .academic-accordion {
+  border-color: #ffffff;
+  background: #1a1a1a;
+}
+
+body.dark-mode .resource-accordion__summary,
+body.dark-mode .academic-accordion__summary,
+body.dark-mode .resource-accordion__content,
+body.dark-mode .academic-accordion__content {
+  color: #ffffff;
+}
+
+body.dark-mode .resource-accordion__content,
+body.dark-mode .academic-accordion__content {
+  border-top-color: rgba(255, 255, 255, 0.35);
+}
+
+body.dark-mode .resource-accordion__content a,
+body.dark-mode .academic-accordion__content a {
+  color: #ffffff;
+}
+
+body.dark-mode .resource-accordion__content :not(pre) > code,
+body.dark-mode .academic-accordion__content :not(pre) > code {
+  background: rgba(255, 255, 255, 0.12);
+  color: #dbeafe;
+}
+
 .research-card, .link-card, .academic-card {
   background-color: var(--gray-color);
   border: 2px solid var(--primary-accent);
@@ -855,4 +969,4 @@ body.dark-mode .nav-btn img {
 
 body.dark-mode .nav.open .nav-list {
   background-color: #111111 !important;
-} 
+}

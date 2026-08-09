@@ -21,7 +21,7 @@
       :root {
         --tools-text: var(--text-color, #1f2937);
         --tools-muted: var(--supportive-text-color, #5f6672);
-        --tools-code-bg: #f7f7f8;
+        --tools-code-bg: #eeeeee;
         --tools-code-text: #171717;
         --tools-code-border: var(--primary-accent, #2563eb);
         --tools-divider: rgba(31, 41, 55, 0.18);
@@ -358,19 +358,26 @@
           ve literatürü takip etmek için kullandığım analitik araçlar ve
           metodolojik altyapı.
         </p>
+        <p class="page-description">
+          <strong>Araştırma İş Akışım:</strong> Genel olarak arXiv ile yeni
+          çalışmaları takip ediyor, Python betiklerimle ilgili makaleleri
+          filtreliyor, Litmaps ile literatür bağlantılarını inceliyor,
+          notlarımı Overleaf üzerinde düzenliyor ve kaynakçaları BibGuru ile
+          hazırlıyorum.
+        </p>
       </div>
 
-      <section
+      <details
         id="arxiv-filtering"
-        class="resource-section"
+        class="resource-accordion"
         data-aos="fade-up"
         aria-labelledby="arxiv-filtering-title"
       >
-        <h2 id="arxiv-filtering-title" class="section-title">
-          arXiv Aboneliği & Python ile Kişisel E-Posta Filtreleme
-        </h2>
+        <summary id="arxiv-filtering-title" class="resource-accordion__summary">
+          arXiv - Subscription
+        </summary>
 
-        <div class="text-block">
+        <div class="resource-accordion__content text-block">
           <p>
             Teorik fizik ve genel görelilik alanındaki güncel literatürü her
             gün düzenli olarak takip etmek için arXiv'in günlük e-posta yayın
@@ -426,6 +433,20 @@
             </li>
           </ul>
 
+        </div>
+      </details>
+
+      <details
+        id="arxiv-python-filtering"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="arxiv-python-filtering-title"
+      >
+        <summary id="arxiv-python-filtering-title" class="resource-accordion__summary">
+          arXiv - Python ile Filtreleme
+        </summary>
+
+        <div class="resource-accordion__content text-block">
           <h3 class="subsection-title">
             Python ile Otomatik E-Posta Filtreleme
           </h3>
@@ -587,18 +608,10 @@ print_results(sonuc)</code></pre>
               arXiv Aboneliklerini Yönet ↗
             </a>
           </div>
-        </div>
-      </section>
 
-      <section
-        id="arxiv-api-script"
-        class="resource-section"
-        data-aos="fade-up"
-        aria-labelledby="arxiv-api-title"
-      >
-        <h2 id="arxiv-api-title" class="section-title">
-          Yapay Zeka Destekli Akıllı arXiv Makale Tarayıcısı
-        </h2>
+          <h3 class="subsection-title">
+            Yapay Zeka Destekli Akıllı arXiv Makale Tarayıcısı
+          </h3>
 
         <p>
           Akademik araştırmalarda en çok zaman alan şeylerden biri, yüzlerce
@@ -816,7 +829,117 @@ if __name__ == "__main__":
           Daha sonra ana konu, alt konu, sorgu ve puanlama sözlüklerini kendi
           araştırma alanınıza göre doldurarak betiği çalıştırabilirsiniz.
         </p>
-      </section>
+        </div>
+      </details>
+
+      <details
+        id="overleaf"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="overleaf-title"
+      >
+        <summary id="overleaf-title" class="resource-accordion__summary">
+          Overleaf
+        </summary>
+
+        <div class="resource-accordion__content text-block">
+          <p>
+            Akademik notlarımı, matematiksel türetmeleri ve proje dokümanlarımı
+            düzenlemek için <strong>Overleaf</strong> kullanıyorum.
+          </p>
+          <p>
+            LaTeX'in temel yapısını ve çalışma mantığını öğrendikten sonra uzun
+            kodları tamamen elle yazmak yerine, kendi hazırladığım notları ve
+            denklemleri yapay zekâya vererek bunların LaTeX koduna
+            dönüştürülmesini istiyorum. Oluşan kodu daha sonra Overleaf üzerinde
+            kontrol edip gerektiğinde düzenliyorum.
+          </p>
+          <p>
+            Bu yöntem özellikle yoğun matematiksel içeriklerde zaman
+            kazandırırken asıl olarak fiziksel ve matematiksel içeriğe
+            odaklanmamı sağlıyor.
+          </p>
+          <div class="link-buttons-wrapper">
+            <a
+              href="https://www.overleaf.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-white"
+            >
+              Overleaf ↗
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details
+        id="litmaps"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="litmaps-title"
+      >
+        <summary id="litmaps-title" class="resource-accordion__summary">
+          Litmaps
+        </summary>
+
+        <div class="resource-accordion__content text-block">
+          <p>
+            Literatür taraması sırasında önemli bir makaleden yola çıkarak
+            onunla bağlantılı diğer çalışmaları görmek için <strong>Litmaps</strong>
+            kullanıyorum.
+          </p>
+          <p>
+            Atıf ilişkilerini görsel olarak takip edebilmek, bir konunun önceki
+            çalışmalarını ve daha sonraki gelişimini keşfetmeyi kolaylaştırıyor.
+            Özellikle yeni bir araştırma alanına girerken makale zincirlerini
+            görmek açısından oldukça kullanışlı buluyorum.
+          </p>
+          <div class="link-buttons-wrapper">
+            <a
+              href="https://www.litmaps.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-white"
+            >
+              Litmaps ↗
+            </a>
+          </div>
+        </div>
+      </details>
+
+      <details
+        id="bibguru"
+        class="resource-accordion"
+        data-aos="fade-up"
+        aria-labelledby="bibguru-title"
+      >
+        <summary id="bibguru-title" class="resource-accordion__summary">
+          BibGuru
+        </summary>
+
+        <div class="resource-accordion__content text-block">
+          <p>
+            Kaynakça ve referans oluşturma sürecinde <strong>BibGuru</strong>
+            kullanıyorum.
+          </p>
+          <p>
+            Makale, kitap ve diğer akademik kaynakların bibliyografik bilgilerini
+            hızlıca düzenlemek ve uygun referans formatına dönüştürmek için
+            yararlanıyorum. Özellikle LaTeX ile hazırladığım dokümanlarda
+            kaynak yönetimini hızlandırıyor.
+          </p>
+          <div class="link-buttons-wrapper">
+            <a
+              href="https://www.bibguru.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-white"
+            >
+              BibGuru ↗
+            </a>
+          </div>
+        </div>
+      </details>
     </main>
 
     <script src="js/main.js"></script>
