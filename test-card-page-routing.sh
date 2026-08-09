@@ -29,9 +29,10 @@ assert_file() {
 }
 
 for file in akademik.html en/akademik.html; do
-  assert_contains "$file" 'href="#akademik-blog"'
   assert_contains "$file" 'grid-template-columns: repeat(2, minmax(0, 1fr));'
   assert_contains "$file" 'id="akademik-blog"'
+  assert_contains "$file" 'class="academic-card academic-blog-card"'
+  assert_contains "$file" 'id="akademik-blog-giris"'
   assert_contains "$file" 'id="alpoge-jacobian"'
 done
 
