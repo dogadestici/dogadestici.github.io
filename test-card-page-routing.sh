@@ -30,20 +30,23 @@ assert_file() {
 
 for file in akademik.html en/akademik.html; do
   assert_contains "$file" 'grid-template-columns: repeat(2, minmax(0, 1fr));'
-  assert_contains "$file" 'id="akademik-blog"'
-  assert_contains "$file" 'class="academic-card academic-blog-card"'
-  assert_contains "$file" 'id="akademik-blog-giris"'
-  assert_contains "$file" 'id="alpoge-jacobian"'
+  assert_contains "$file" 'href="blog-akademik.html"'
+  assert_not_contains "$file" 'class="academic-card academic-blog-card"'
+  assert_not_contains "$file" 'id="akademik-blog-giris"'
+  assert_not_contains "$file" 'id="alpoge-jacobian"'
 done
 
 for file in sosyal.html en/sosyal.html; do
-  assert_contains "$file" 'href="#topluluklarim"'
-  assert_contains "$file" 'href="#gezi"'
-  assert_contains "$file" 'href="#sosyal-blog"'
+  assert_contains "$file" 'href="topluluklar.html"'
+  assert_contains "$file" 'href="gezi.html"'
+  assert_contains "$file" 'href="blog-sosyal.html"'
   assert_contains "$file" 'grid-template-columns: repeat(2, minmax(0, 1fr));'
-  assert_contains "$file" 'id="topluluklarim"'
-  assert_contains "$file" 'id="gezi"'
-  assert_contains "$file" 'id="sosyal-blog"'
+  assert_not_contains "$file" 'href="#topluluklarim"'
+  assert_not_contains "$file" 'href="#gezi"'
+  assert_not_contains "$file" 'href="#sosyal-blog"'
+  assert_not_contains "$file" 'id="topluluklarim"'
+  assert_not_contains "$file" 'id="gezi"'
+  assert_not_contains "$file" 'id="sosyal-blog"'
 done
 
 for file in topluluklar.html en/topluluklar.html; do
@@ -55,10 +58,14 @@ done
 
 assert_contains blog-akademik.html 'href="akademik.html"'
 assert_contains blog-sosyal.html 'href="sosyal.html"'
-assert_contains blog.html 'href="sosyal.html#sosyal-blog"'
-assert_contains blog.html 'href="akademik.html#akademik-blog"'
-assert_contains en/blog.html 'href="sosyal.html#sosyal-blog"'
-assert_contains en/blog.html 'href="akademik.html#akademik-blog"'
+assert_contains blog.html 'href="blog-sosyal.html"'
+assert_contains blog.html 'href="blog-akademik.html"'
+assert_contains en/blog.html 'href="blog-sosyal.html"'
+assert_contains en/blog.html 'href="blog-akademik.html"'
+assert_not_contains blog.html 'href="sosyal.html#sosyal-blog"'
+assert_not_contains blog.html 'href="akademik.html#akademik-blog"'
+assert_not_contains en/blog.html 'href="sosyal.html#sosyal-blog"'
+assert_not_contains en/blog.html 'href="akademik.html#akademik-blog"'
 assert_contains topluluklar.html 'href="sosyal.html"'
 assert_contains gezi.html 'href="sosyal.html"'
 

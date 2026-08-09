@@ -59,30 +59,6 @@
         line-height: 1.6;
         color: var(--supportive-text-color);
       }
-      .academic-blog-card {
-        overflow: hidden;
-        cursor: default;
-      }
-      .academic-blog-content {
-        padding: 0 25px 25px;
-        background: var(--gray-color);
-        border: 2px solid var(--primary-accent);
-        border-top: none;
-      }
-      .academic-blog-content .academic-section {
-        padding: 30px 0;
-      }
-      .academic-blog-content .section-title-sub {
-        font-size: 1.5rem;
-        text-transform: none;
-        letter-spacing: 0;
-      }
-      .academic-blog-content .text-block {
-        max-width: none;
-        font-size: 1rem;
-        line-height: 1.7;
-        text-align: left;
-      }
       .quote-text {
         text-align: center;
         font-style: italic;
@@ -99,62 +75,7 @@
       body.dark-mode .quote-text {
         color: #ffffff !important;
       }
-      body.dark-mode .academic-blog-content {
-        background: #1a1a1a !important;
-        border-color: #ffffff !important;
-      }
 
-      .academic-info-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 80px 20px;
-      }
-      .academic-section {
-        padding: 60px 0;
-        border-bottom: 2px solid var(--primary-accent);
-      }
-      .section-title-sub {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        text-align: center;
-        font-weight: bold;
-        color: var(--primary-accent);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .text-block {
-        max-width: 850px;
-        margin: 0 auto;
-        font-size: 1.15rem;
-        line-height: 1.8;
-        text-align: justify;
-      }
-      .fanzin-img-frame {
-        display: block;
-        width: 100%;
-        max-width: 850px;
-        height: auto;
-        max-height: 480px;
-        border: 3px solid var(--primary-accent);
-        border-radius: 16px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        object-fit: cover;
-        margin: 25px auto;
-      }
-      .fanzin-img-sub {
-        text-align: center;
-        font-style: italic;
-        color: var(--supportive-text-color);
-        margin-top: -10px;
-        margin-bottom: 25px;
-        font-size: 0.95rem;
-      }
-      body.dark-mode .academic-section { border-bottom-color: #ffffff !important; }
-      body.dark-mode .section-title-sub,
-      body.dark-mode .text-block p,
-      body.dark-mode .fanzin-img-sub,
-      body.dark-mode .blog-date { color: #ffffff !important; }
-      body.dark-mode .fanzin-img-frame { border-color: #ffffff !important; }
     </style>
   </head>
 
@@ -223,115 +144,13 @@
           </div>
         </a>
 
-        <div id="akademik-blog" class="academic-card academic-blog-card">
+        <a href="blog-akademik.html" class="academic-card">
           <img src="../img/works/akademik-blog.jpeg" alt="Academic Blog" class="card-bg-img" />
           <div class="card-body">
             <h3>Academic Blog & Research Notes</h3>
             <p>Course notes, research updates, articles, and reflections on mathematics.</p>
           </div>
-          <div class="academic-blog-content">
-            <section class="academic-section blog-intro" style="padding-top: 10px;">
-                  <div id="akademik-blog-giris">
-
-                    <div class="text-block" data-aos="fade-up">
-                      <p>
-                        Lecture notes, topics I am currently working on, academic research, interesting papers, and articles related to my field.
-                      </p>
-                    </div>
-
-                  </div>
-                </section>
-
-            <section id="alpoge-jacobian" class="academic-section" style="border-bottom: none;">
-                    <h3 class="section-title-sub">Levent Alpöge, Claude Fable 5, and the Future of the Jacobian Conjecture</h3>
-
-                    <div class="text-block" data-aos="fade-up">
-                      <p>
-                        I wanted to take a closer look at the major news that recently surfaced across mathematical communities and social media. The <strong>Jacobian Conjecture</strong>, open since 1939 in algebraic geometry and famous for its history of incorrect proofs, experienced a significant turning point on July 20, 2026. Mathematician and Anthropic researcher <strong>Levent Alpöge</strong> shared a concrete counterexample disproving the conjecture in 3 dimensions ($n=3$), announcing it via a short post on X (Twitter) rather than a formal paper.
-                      </p>
-
-                      <h4 style="font-size: 1.3rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
-                        Background of the Discovery
-                      </h4>
-                      <p>
-                        What makes this breakthrough particularly interesting is that Alpöge utilized Anthropic's next-generation large language model, <em>Claude Fable 5</em>, in the process. AI tools have been increasingly applied to unsolved mathematical problems, yielding notable results. For the Jacobian Conjecture, a 3-dimensional polynomial system—where manual verification of the degree and term count would be intractable—was identified, featuring a constant Jacobian determinant without a polynomial inverse.
-                      </p>
-
-                      <h4 style="font-size: 1.3rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
-                        What Comes Next?
-                      </h4>
-                      <p>
-                        This counterexample for $n=3$ opens up new directions for research:
-                      </p>
-                      <ul style="list-style-type: square; padding-left: 25px; margin: 15px 0; line-height: 2;">
-                        <li>
-                          <strong>The 2-Dimensional ($n=2$) Case Remains Open:</strong> In the literature, the 2-variable case and the general $n$-variable case have often been treated separately. While the $n=3$ case has been disproved, $n=2$ remains unsolved and continues to be a central topic of study.
-                        </li>
-                        <li>
-                          <strong>Dixmier Conjecture:</strong> This topic is closely connected to algebraic geometry as well as the <em>Dixmier Conjecture</em> in quantum mechanics and algebraic structures. Disproving $n=3$ prompts a re-examination of these equivalent formulations.
-                        </li>
-                        <li>
-                          <strong>Formal Peer Review Pending:</strong> It is worth noting that this result has not yet been published in a peer-reviewed academic journal. The symbolic calculations were independently reproduced, and the counterexample was verified in the Lean proof assistant within hours; however, traditional peer review and a formal manuscript are still forthcoming.
-                        </li>
-                      </ul>
-
-                      <h4 style="font-size: 1.3rem; font-weight: bold; margin: 25px 0 10px 0; color: var(--secondary-accent);">
-                        Connecting to the Leiden Declaration
-                      </h4>
-                      <p>
-                        This announcement also intersects with broader discussions on AI in mathematics. Shortly before this result, on June 2, 2026, sixteen researchers from fifteen universities published the <strong>"Leiden Declaration on Artificial Intelligence and Mathematics"</strong>, endorsed by the International Mathematical Union (IMU). Originating from a Lorentz Center workshop at Leiden University in September 2025, the declaration addresses verifiability, citation transparency, research autonomy, funding, and equitable access.
-                      </p>
-                      <p>
-                        Alpöge's announcement relates to the declaration's core themes in several ways:
-                      </p>
-                      <ul style="list-style-type: square; padding-left: 25px; margin: 15px 0; line-height: 2;">
-                        <li>
-                          <strong>Transparency in AI Usage:</strong> Alpöge explicitly credited Claude Fable 5 as a co-discoverer and provided Wolfram Alpha verification links, aligning with the declaration's call for clear disclosure of AI tools.
-                        </li>
-                        <li>
-                          <strong>Dissemination Channels:</strong> The result was announced on social media by a researcher at an AI company (Anthropic) prior to traditional peer review, highlighting ongoing shifts in how mathematical discoveries are shared and evaluated.
-                        </li>
-                        <li>
-                          <strong>Verification Speed:</strong> Rapid verification in proof assistants demonstrates new capabilities while raising questions about how traditional reviewing systems adapt to AI-generated results.
-                        </li>
-                      </ul>
-                      <p>
-                        This milestone represents both a notable mathematical achievement and an example of evolving methodologies in research.
-                      </p>
-
-                      <p style="margin-top: 25px; text-align: center; font-weight: bold; color: var(--secondary-accent);">
-                        Below you can find links to Levent Alpöge's personal website, the original text of the Leiden Declaration, and its Turkish translation:
-                      </p>
-
-                      <div class="link-buttons-wrapper" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 35px;">
-                        <a href="https://leventalpoge.com" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0; display: inline-block;">
-                          Levent Alpöge Website ↗
-                        </a>
-
-                        <a href="https://leidendeclaration.ai" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0; display: inline-block;">
-                          Leiden Declaration (Original Text) ↗
-                        </a>
-
-                        <a href="https://tmd.org.tr/leiden-yapay-zeka-ve-matematik-bildirgesi/" target="_blank" rel="noopener" class="btn btn-white" style="margin: 0; display: inline-block;">
-                          TMD - Leiden Declaration Turkish Translation ↗
-                        </a>
-                      </div>
-
-                      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px dashed var(--primary-accent); font-size: 0.95rem;">
-                        <p style="font-weight: bold; margin-bottom: 10px; color: var(--secondary-accent);">[Sources & References]:</p>
-                        <ol style="padding-left: 20px; line-height: 1.8;">
-                          <li>Keller, O. H. (1939). "Ganze Cremona-Transformationen". <em>Monatshefte für Mathematik und Physik</em>, 47(1), 299-306.</li>
-                          <li>Smale, S. (1998). "Mathematical Problems for the Next Century". <em>The Mathematical Intelligencer</em>, 20(2), 7-15.</li>
-                          <li>Alpöge, L. X post, July 20, 2026. (Based on a social media announcement and independent verification; formal peer-reviewed manuscript pending).</li>
-                          <li>Bass, H., Connell, E. H., & Wright, D. (1982). "The Jacobian conjecture: reduction of degree and formal expansion of the inverse". <em>Bulletin of the American Mathematical Society</em>, 7(2), 287-330.</li>
-                          <li>Dixmier, J. (1968). "Sur les algèbres de Weyl". <em>Bulletin de la Société Mathématique de France</em>, 96, 209-242.</li>
-                          <li>Leiden Declaration on Artificial Intelligence and Mathematics (2026). Published: June 2, 2026. Prepared at Lorentz Center, Leiden University workshop (September 2025); supported by the International Mathematical Union (IMU). <a href="https://leidendeclaration.ai/" target="_blank" rel="noopener">leidendeclaration.ai</a></li>
-                        </ol>
-                      </div>
-                    </div>
-                  </section>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
 
