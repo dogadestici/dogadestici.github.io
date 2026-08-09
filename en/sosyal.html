@@ -71,6 +71,75 @@
       body.dark-mode .fanzin-img-frame {
         border-color: #ffffff !important;
       }
+
+      .academic-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      .academic-card {
+        min-width: 0;
+        max-width: none;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .academic-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .card-bg-img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        display: block;
+      }
+      .card-body {
+        padding: 25px;
+        background: var(--gray-color);
+        border: 2px solid var(--primary-accent);
+        border-top: none;
+      }
+      .card-body h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: var(--primary-accent);
+      }
+      .card-body p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--supportive-text-color);
+      }
+      .quote-text {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        font-size: 1.2rem;
+      }
+      .blog-date {
+        text-align: center;
+        font-weight: bold;
+        color: var(--secondary-accent);
+        font-size: 1.05rem;
+        margin-top: -10px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      body.dark-mode .card-body {
+        background: #1a1a1a !important;
+        border-color: #ffffff !important;
+      }
+      body.dark-mode .card-body h3,
+      body.dark-mode .card-body p,
+      body.dark-mode .quote-text,
+      body.dark-mode .blog-date {
+        color: #ffffff !important;
+      }
     </style>
   </head>
 
@@ -87,12 +156,10 @@
               <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="akademik.html" class="nav-link">Academic</a></li>
               <li class="nav-item"><a href="sosyal.html" class="nav-link active">Social</a></li>
-              <li class="nav-item"><a href="gezi.html" class="nav-link">Travel</a></li>
-              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
               <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
               <li class="nav-item">
                 <a href="../sosyal.html" class="nav-link">🇹🇷TR</a>
-              </li> 
+              </li>
               <li class="nav-item">
                 <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
               </li>
@@ -105,107 +172,33 @@
     <div class="academic-info-container">
       <a href="index.html" class="back-btn">← Back to Home</a>
 
-      <section id="genel-bakis" class="academic-section" style="padding-top: 10px;">
-        <h3 class="section-title-sub">Social</h3>
-        
-        <p class="quote-text">
-          "The most beautiful emotion we can experience is the mysterious. It is the fundamental emotion that stands at the cradle of true art and true science."
-          <br>
-          <cite>- Albert Einstein</cite>
-        </p>
-        
-        <div class="text-block" data-aos="fade-up" style="margin-top: 30px;">
-          <p>
-            I have never viewed my university life solely as an academic pursuit; I actively sought out opportunities to enrich myself through culture, music, and local as well as international experiences. Although I do not play an instrument, I have always been a dedicated, loyal, and passionate listener. I translated this connection to music into action by contributing to student communities, organizing events, and taking on administrative roles. On this page, I share this dynamic aspect of my university journey, highlighting the organizations I have been a part of and helped grow. Furthermore, music is not just something I listen to—curating playlists is one of my favorite hobbies and holds a central place in my routine. I am quite active on Spotify, and you can visit my profile via the link at the bottom of the page to explore my playlists.
-          </p>
-        </div>
-      </section>
-
-      <section id="ankarock" class="academic-section">
-        <h3 class="section-title-sub">Ankarock & Metal Music Society</h3>
-        
-        <div style="text-align: center;" data-aos="fade-up">
-          <img src="../img/social/ankarock.jpg" alt="AnkaRock Stage" class="fanzin-img-frame" onerror="this.src='../img/works/ankarock.jpeg'" />
-          <p class="fanzin-img-sub">Ankarock Welcome Event - 25.10.2023</p>
-        </div>
-
-        <div class="text-block" data-aos="fade-up">
-          <p>
-            Founded at Ankara University, <strong>Ankarock</strong> is a student organization that approaches rock and metal music not merely as genres, but as a unifying culture. Our goal is to connect listeners who appreciate rock, metal, blues, and jazz both on and off campus. Whether one plays an instrument or not, I contribute to creating an inclusive space for everyone who shares an appreciation for this music by organizing concerts, talks, festival logistics, and listening sessions. We continue to expand Ankarock and keep Ankara's rich rock and metal culture vibrant.
-          </p>
-
-          <h4 style="font-family: 'Courier New', Courier, monospace; font-weight: bold; margin-top: 30px; margin-bottom: 15px;">What We Do</h4>
-          <p>
-            Under the Ankarock umbrella, we engage with music and culture collaboratively. Key events we regularly organize to strengthen community ties include:
-          </p>
-          
-          <ul style="list-style-type: none; padding-left: 0; font-family: 'Courier New', Courier, monospace;">
-            <li style="margin-bottom: 15px;">
-              <strong>• Welcome Meetings:</strong> Gathering at the beginning of academic terms to greet new members, build connections, and foster a welcoming community atmosphere.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <strong>• Jam Sessions:</strong> Interactive sessions where musicians take the stage for improvisational sessions and musical collaboration.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <strong>• Rock & Metal Talks:</strong> Dedicated discussion sessions examining the history, philosophy, albums, and cultural influence of specific bands or movements in rock and metal.
-            </li>
-          </ul>
-
-          <p style="margin-top: 30px; border-left: 2px solid var(--primary-accent); padding-left: 15px; font-style: italic;">
-            You can follow our upcoming events on social media and participate in ticket giveaways for local concerts in Ankara. Students at Ankara University are welcome to join directly, while non-members can attend all our open events. You can also explore or contribute to our <strong>"Ankarock Cult"</strong> article series featuring album and artist reviews using the link below.
-          </p>
-
-          <div style="text-align: center; margin-top: 30px;">
-            <a href="https://www.instagram.com/ankarockmetal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-white" style="margin: 0;">Community Account ↗</a>
+      <div class="academic-row social-overview-row">
+        <a href="topluluklar.html" class="academic-card">
+          <img src="../img/works/sosyal.jpeg" alt="My Communities" class="card-bg-img" />
+          <div class="card-body">
+            <h3>My Communities</h3>
+            <p>My social work through Ankarock, UNIROCK, ESN, and Spotify.</p>
           </div>
-        </div>
-      </section>
+        </a>
 
-      <section id="unirock" class="academic-section" style="margin-top: 50px;">
-        <h3 class="section-title-sub">UNIROCK</h3>
-
-        <div class="text-block" data-aos="fade-up">
-          <p>
-            Over the past two years, various university rock societies joined forces under the <strong>UniRock</strong> umbrella to create collaborative spaces and contribute to rock culture on a broader scale. We work together to support music communities and promote inter-university solidarity.
-          </p>
-          <p>
-            As the <strong>Ankarock Representative</strong> within this collective, I participate in event coordination, planning, and logistics from the foundational stages onward.
-          </p>
-          <p style="margin-top: 20px; border-left: 2px solid var(--primary-accent); padding-left: 15px; font-style: italic;">
-            To stay updated on upcoming joint concerts, workshops, and inter-university gatherings, you can follow UniRock via the link below.
-          </p>
-
-          <div style="text-align: center; margin-top: 30px;">
-            <a href="https://www.instagram.com/unirock_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-white" style="margin: 0;">UniRock Official Account ↗</a>
+        <a href="gezi.html" class="academic-card">
+          <img src="../img/works/gezi.jpeg" alt="Travel" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Travel</h3>
+            <p>My personal routes, travel notes, and Erasmus+ projects.</p>
           </div>
-        </div>
-      </section>
+        </a>
 
-      <section id="esn" class="academic-section" style="margin-top: 50px;">
-        <h3 class="section-title-sub">ESN (Erasmus Student Network)</h3>
-
-        <div class="text-block" data-aos="fade-up">
-          <p>
-            <strong>What is ESN (Erasmus Student Network)?</strong><br>
-            ESN is one of the largest student organizations in Europe, supporting internationalization in higher education, facilitating intercultural integration, and providing peer-to-peer support for exchange students.
-          </p>
-          <p>
-            Following my own Erasmus+ exchange, I joined <strong>ESN Ankara University</strong> to support incoming international students with their integration into the city, local culture, and academic environment. As a candidate member, I assist with organization efforts and peer mentorship.
-          </p>
-
-          <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-            <a href="https://www.instagram.com/esnankarauni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-white" style="margin: 0;">ESN Ankara University IG ↗</a>
+        <a href="blog-sosyal.html" class="academic-card">
+          <img src="../img/works/sosyal-blog.jpg" alt="Social Blog" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Social Blog</h3>
+            <p>Notes on music, events, travel, and everyday life.</p>
           </div>
-        </div>
-      </section>
+        </a>
+      </div>
 
-      <section id="spotify" class="academic-section" style="margin-top: 50px; margin-bottom: 50px;">
-        <h3 class="section-title-sub">Spotify</h3>
-
-        <div class="text-block" data-aos="fade-up" style="text-align: center; margin-top: 20px;">
-          <a href="https://open.spotify.com/user/ecenazdo%C4%9Fa?si=1b5513b9c14f443b" target="_blank" class="btn btn-white" style="margin: 0;">My Spotify Profile ↗</a>
-        </div>
-      </section>
+    </div>
 
 
     <script
@@ -216,4 +209,4 @@
     ></script>
     <script src="../js/site.js"></script>
   </body>
-</html> 
+</html>

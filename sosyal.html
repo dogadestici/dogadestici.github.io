@@ -71,6 +71,75 @@
       body.dark-mode .fanzin-img-frame {
         border-color: #ffffff !important;
       }
+
+      .academic-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      .academic-card {
+        min-width: 0;
+        max-width: none;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .academic-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .card-bg-img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        display: block;
+      }
+      .card-body {
+        padding: 25px;
+        background: var(--gray-color);
+        border: 2px solid var(--primary-accent);
+        border-top: none;
+      }
+      .card-body h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: var(--primary-accent);
+      }
+      .card-body p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--supportive-text-color);
+      }
+      .quote-text {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        font-size: 1.2rem;
+      }
+      .blog-date {
+        text-align: center;
+        font-weight: bold;
+        color: var(--secondary-accent);
+        font-size: 1.05rem;
+        margin-top: -10px;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      body.dark-mode .card-body {
+        background: #1a1a1a !important;
+        border-color: #ffffff !important;
+      }
+      body.dark-mode .card-body h3,
+      body.dark-mode .card-body p,
+      body.dark-mode .quote-text,
+      body.dark-mode .blog-date {
+        color: #ffffff !important;
+      }
     </style>
   </head>
 
@@ -87,8 +156,6 @@
               <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
               <li class="nav-item"><a href="akademik.html" class="nav-link">Akademik</a></li>
               <li class="nav-item"><a href="sosyal.html" class="nav-link active">Sosyal</a></li>
-              <li class="nav-item"><a href="gezi.html" class="nav-link">Gezi</a></li>
-              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
               <li class="nav-item"><a href="index.html#contact" class="nav-link">İletişim</a></li> 
               <li class="nav-item"><a href="en/sosyal.html" class="nav-link">🇬🇧EN</a></li> 
               <li class="nav-item">
@@ -103,107 +170,32 @@
     <div class="academic-info-container">
       <a href="index.html" class="back-btn">← Anasayfaya Dön</a>
 
-      <section id="genel-bakis" class="academic-section" style="padding-top: 10px;">
-        <h3 class="section-title-sub">Sosyal</h3>
-        
-        <p class="quote-text">
-          "The most beautiful emotion we can experience is the mysterious. It is the fundamental emotion that stands at the cradle of true art and true science."
-          <br>
-          <cite>- Albert Einstein</cite>
-        </p>
-        
-        <div class="text-block" data-aos="fade-up" style="margin-top: 30px;">
-          <p>
-            Üniversite hayatımı sadece akademik bir süreç olarak görmedim; ilgi alanlarım doğrultusunda kendimi kültürle, müzikle, ulusal ve uluslararası alanlarda besleyebileceğim her fırsatın peşinden koştum. Bir enstrüman çalmasam da her zaman çok iyi, sadık ve tutkulu bir dinleyici oldum. Müziğe olan bu bağımı, toplulukların mutfağında yer alarak, yönetim ve organizasyon işlerinde olabildiğince faydalı olmaya çalışarak somutlaştırdım. Bu sayfada üniversite hayatımın bu dinamik yönünü, parçası olduğum ve büyütmek için emek harcadığım oluşumları size olabildiğince kendi penceremden aktarmaya çalışacağım. Ayrıca müzik benim için sadece bir dinleme eylemi değil, aynı zamanda en büyük hobilerimden biri olan çalma listeleri (playlist) hazırlama süreciyle hayatımın merkezinde. Spotify’da oldukça aktifim; eğer müzik zevkimi ve oluşturduğum çalma listelerini incelemek isterseniz sayfanın en altındaki bölümden Spotify hesabıma ulaşabilirsiniz.
-          </p>
-        </div>
-      </section>
-
-      <section id="ankarock" class="academic-section">
-        <h3 class="section-title-sub">Ankarock & Metal Müzik Topluluğu</h3>
-        
-        <div style="text-align: center;" data-aos="fade-up">
-          <img src="img/social/ankarock.jpg" alt="AnkaRock Sahnesi" class="fanzin-img-frame" onerror="this.src='img/works/ankarock.jpeg'" />
-          <p class="fanzin-img-sub">Ankarock Tanışma Etkinliği - 25.10.2023</p>
-        </div>
-
-        <div class="text-block" data-aos="fade-up">
-          <p>
-            Ankara Üniversitesi bünyesinde temellerini attığımız <strong>Ankarock</strong>, rock ve metal müziği sadece bir janr olarak değil, insanları bir araya getiren birleştirici bir kültür olarak gören bir öğrenci topluluğudur. Amacımız; kampüs sınırları içinde ve ötesinde rock, metal, blues ve caz gibi köklü müzik türlerine gönül vermiş dinleyicileri ortak bir paydada buluşturmaktır. Bir enstrüman çalsın ya da çalmasın, bu müziğin felsefesini seven herkes için samimi, özgür ve kapsayıcı bir topluluk alanı yaratmak adına konserlerden söyleşilere, festival organizasyonlarından dinleti gecelerine kadar tüm süreçlerin mutfağında aktif olarak yer alıyorum. Bu hedefle kurulan Ankarock'ı her geçen gün daha da büyütmeye ve Ankara'nın o kendine has, köklü rock/metal damarını canlı tutmaya devam ediyoruz.
-          </p>
-
-          <h4 style="font-family: 'Courier New', Courier, monospace; font-weight: bold; margin-top: 30px; margin-bottom: 15px;">Neler Yapıyoruz?</h4>
-          <p>
-            Ankarock çatısı altında müziği ve kültürü sadece tüketmiyor, onu hep birlikte üretiyoruz. Kampüsteki bağlarımızı güçlendirmek ve bu kültürü canlı tutmak için düzenli olarak hayata geçirdiğimiz bazı temel etkinliklerimiz:
-          </p>
-          
-          <ul style="list-style-type: none; padding-left: 0; font-family: 'Courier New', Courier, monospace;">
-            <li style="margin-bottom: 15px;">
-              <strong>• Tanışma Toplantıları:</strong> Dönem başlarında ve belirli aralıklarla bir araya geldiğimiz, topluluğa yeni katılan dostlarımızla tanışıp büyük bir aile olduğumuzu hissettiğimiz, samimi bağların temelini attığımız kitlesel buluşmalar.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <strong>• Jam Session:</strong> Enstrümanını kapanların sahneye çıktığı, doğaçlamalar ve müzikal etkileşimin ana amaç olduğu, müzisyenlerle dinleyicileri en yalın haliyle buluşturan interaktif etkinlik.
-            </li>
-            <li style="margin-bottom: 15px;">
-              <strong>• Rock & Metal Talks:</strong> Sadece dinlemekle kalmayıp müziğin felsefesine de indiğimiz özel oturumlar. Bu sohbetlerde bir araya geliyor; belirli bir albümü, dönemi, grubu ya da müzikal akımı masaya yatırarak derinlemesine tartışıyoruz.
-            </li>
-          </ul>
-
-          <p style="margin-top: 30px; border-left: 2px solid var(--primary-accent); padding-left: 15px; font-style: italic;">
-            Ayrıca sosyal medya hesaplarımız üzerinden gelecek etkinliklerimizi takip edebilir, Ankara'daki yerel konserler için düzenlediğimiz çekilişlere katılabilirsiniz. Eğer Ankara Üniversitesi'ndeyseniz doğrudan topluluğumuza üye olabilir, değilseniz de üye olmadan tüm etkinliklerimize katılabilirsiniz. Önceki dönemlerde benim de yazdığım, albüm ve sanatçı incelemeleri konseptindeki <strong>"Ankarock Kült"</strong> serimizi okumak ya da ekibe katılarak kendi yazılarınızı yayınlamak isterseniz aşağıdaki linkten bize ulaşabilirsiniz.
-          </p>
-
-          <div style="text-align: center; margin-top: 30px;">
-            <a href="https://www.instagram.com/ankarockmetal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-white" style="margin: 0;">Topluluk Hesabı ↗</a>
+      <div class="academic-row social-overview-row">
+        <a href="topluluklar.html" class="academic-card">
+          <img src="img/works/sosyal.jpeg" alt="Topluluklarım" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Topluluklarım</h3>
+            <p>Ankarock, UNIROCK, ESN ve Spotify üzerinden yürüttüğüm sosyal çalışmalar.</p>
           </div>
-        </div>
-      </section>
+        </a>
 
-      <section id="unirock" class="academic-section" style="margin-top: 50px;">
-        <h3 class="section-title-sub">UNIROCK</h3>
-
-        <div class="text-block" data-aos="fade-up">
-          <p>
-            Yaklaşık iki yıldır bir araya gelen farklı üniversite rock toplulukları olarak, alt kültürlerin bir arada barınabileceği güvenli alanlar yaratmak ve rock kültürüne daha büyük ölçekte katkı sağlamak amacıyla <strong>UniRock</strong> çatısı altında birleştik. Rock müziği ve tüm alt türlerini yaşatmak için ortaklaşa çalışıyor, bu kültüre gönül vermiş herkesle dayanışma içinde olmaktan gurur duyuyoruz.
-          </p>
-          <p>
-            Ben de bu kolektif yapıda <strong>Ankarock Temsilcisi</strong> olarak yer alıyor; UniRock oluşumunun kuruluş aşamalarından itibaren etkinliklerin planlanması, koordinasyonu ve saha süreçlerinde aktif olarak destek sağlıyorum.
-          </p>
-          <p style="margin-top: 20px; border-left: 2px solid var(--primary-accent); padding-left: 15px; font-style: italic;">
-            Yakın dönemde hayata geçireceğimiz ortak konserler, atölyeler, söyleşiler ve daha bir çok kitlesel etkinlikten haberdar olmak için UniRock oluşumunu aşağıdaki linkten takip edebilirsiniz.
-          </p>
-
-          <div style="text-align: center; margin-top: 30px;">
-            <a href="https://www.instagram.com/unirock_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-white" style="margin: 0;">UniRock Resmi Hesabı ↗</a>
+        <a href="gezi.html" class="academic-card">
+          <img src="img/works/gezi.jpeg" alt="Gezi" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Gezi</h3>
+            <p>Kişisel rotalarım, seyahat notlarım ve Erasmus+ projeleri.</p>
           </div>
-        </div>
-      </section>
+        </a>
 
-      <section id="esn" class="academic-section" style="margin-top: 50px;">
-        <h3 class="section-title-sub">ESN (Erasmus Student Network)</h3>
-
-        <div class="text-block" data-aos="fade-up">
-          <p>
-            <strong>ESN (Erasmus Student Network) Nedir?</strong><br>
-            Avrupa'nın en büyük disiplinlerarası öğrenci organizasyonlarından biri olan ESN; yükseköğretimde uluslararasılaşmayı destekleyen, kültürlerarası entegrasyonu sağlayan ve küresel akran rehberliği (peer-to-peer-support) modeliyle dünya vatandaşlığını teşvik eden devasa bir gönüllülük ve diplomasi ağıdır.
-          </p>
-          <p>
-            Kendi Erasmus+ deneyimimin ardından, Ankara'ya değişim programlarıyla gelen yabancı öğrencilerin şehre, kültüre ve akademik ortama uyum süreçlerine rehberlik edebilmek adına harekete geçtim. Bu doğrultuda Ankara'nın en köklü ve en büyük yerel birimi olan <strong>ESN Ankara Üniversitesi</strong> bünyesine katıldım. Şu anda aday üye olarak topluluğun etkinliklerine katılıyor, yabancı öğrencilere rehberlik ederek bu güzel ekibe elimden geldiğince destek olmaya çalışıyorum.
-          </p>
-
-          <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-            <a href="https://www.instagram.com/esnankarauni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-white" style="margin: 0;">ESN Ankara Üniversitesi IG ↗</a>
+        <a href="blog-sosyal.html" class="academic-card">
+          <img src="img/works/sosyal-blog.jpg" alt="Sosyal Blog" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Sosyal Blog</h3>
+            <p>Müzik, etkinlikler, geziler ve günlük hayatımdan notlar.</p>
           </div>
-        </div>
-      </section>
+        </a>
+      </div>
 
-      <section id="spotify" class="academic-section" style="margin-top: 50px; margin-bottom: 50px;">
-        <h3 class="section-title-sub">Spotify</h3>
-
-        <div class="text-block" data-aos="fade-up" style="text-align: center; margin-top: 20px;">
-          <a href="https://open.spotify.com/user/ecenazdo%C4%9Fa?si=1b5513b9c14f443b" target="_blank" class="btn btn-white" style="margin: 0;">Spotify Profilim ↗</a>
-        </div>
-      </section>
     </div>
 
   <footer class="footer">
@@ -221,4 +213,4 @@
     ></script>
     <script src="js/site.js"></script>
   </body>
-</html> 
+</html>

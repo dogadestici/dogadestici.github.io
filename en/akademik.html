@@ -16,16 +16,15 @@
     />
     <style>
       .academic-row {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px;
-        justify-content: center;
         margin-top: 50px;
         margin-bottom: 80px;
       }
       .academic-card {
-        flex: 1 1 300px;
-        max-width: 380px;
+        min-width: 0;
+        max-width: none;
         display: block;
         position: relative;
         text-decoration: none;
@@ -75,6 +74,58 @@
       body.dark-mode .quote-text {
         color: #ffffff !important;
       }
+
+      .academic-info-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 80px 20px;
+      }
+      .academic-section {
+        padding: 60px 0;
+        border-bottom: 2px solid var(--primary-accent);
+      }
+      .section-title-sub {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--primary-accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .text-block {
+        max-width: 850px;
+        margin: 0 auto;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .fanzin-img-frame {
+        display: block;
+        width: 100%;
+        max-width: 850px;
+        height: auto;
+        max-height: 480px;
+        border: 3px solid var(--primary-accent);
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        object-fit: cover;
+        margin: 25px auto;
+      }
+      .fanzin-img-sub {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        margin-top: -10px;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+      }
+      body.dark-mode .academic-section { border-bottom-color: #ffffff !important; }
+      body.dark-mode .section-title-sub,
+      body.dark-mode .text-block p,
+      body.dark-mode .fanzin-img-sub,
+      body.dark-mode .blog-date { color: #ffffff !important; }
+      body.dark-mode .fanzin-img-frame { border-color: #ffffff !important; }
     </style>
   </head>
 
@@ -91,12 +142,10 @@
               <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
               <li class="nav-item"><a href="akademik.html" class="nav-link active">Academic</a></li>
               <li class="nav-item"><a href="sosyal.html" class="nav-link">Social</a></li>
-              <li class="nav-item"><a href="gezi.html" class="nav-link">Travel</a></li>
-              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
               <li class="nav-item"><a href="mailto:dogadestici@gmail.com" class="nav-link">Contact</a></li>
               <li class="nav-item">
                 <a href="../akademik.html" class="nav-link">🇹🇷TR</a>
-              </li> 
+              </li>
               <li class="nav-item">
                 <button id="darkModeToggle" class="dark-toggle-btn">◑ MODE</button>
               </li>
@@ -111,7 +160,7 @@
         <div class="about-title">
           <h2 class="title" style="margin-bottom: 15px;">Academic Work</h2>
           <p class="quote-text">
-            "The book of nature is written in the language of mathematics." 
+            "The book of nature is written in the language of mathematics."
             <br>
             - Galileo
           </p>
@@ -121,7 +170,7 @@
 
     <div class="container">
       <div class="academic-row">
-        <a href="academic-info.html" class="academic-card" data-aos="fade-up" data-aos-delay="100">
+        <a href="academic-info.html" class="academic-card">
           <img src="../img/works/erasmus.jpg" alt="About Me & Vision" class="card-bg-img" onerror="this.src='../img/works/overleaf.jpeg'" />
           <div class="card-body">
             <h3>About Me & Vision</h3>
@@ -129,19 +178,27 @@
           </div>
         </a>
 
-        <a href="academic-projects.html" class="academic-card" data-aos="fade-up" data-aos-delay="200">
+        <a href="academic-projects.html" class="academic-card">
           <img src="../img/works/overleaf.jpeg" alt="Current Research" class="card-bg-img" />
           <div class="card-body">
             <h3>Current Research & Links</h3>
             <p>Independent research, active projects, general notes, and seminar materials.</p>
           </div>
         </a>
-      
-        <a href="academic-tools.html" class="academic-card" data-aos="fade-up" data-aos-delay="300">
+
+        <a href="academic-tools.html" class="academic-card">
           <img src="../img/works/tool.jpg" alt="Research Tools" class="card-bg-img" onerror="this.src='../img/works/overleaf.jpeg'" />
           <div class="card-body">
             <h3>Research Tools & Resources</h3>
             <p>Core tools, software, and digital academic resources used in my research.</p>
+          </div>
+        </a>
+
+        <a href="blog-akademik.html" class="academic-card">
+          <img src="../img/works/akademik-blog.jpeg" alt="Academic Blog" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Academic Blog & Research Notes</h3>
+            <p>Course notes, research updates, articles, and reflections on mathematics.</p>
           </div>
         </a>
       </div>

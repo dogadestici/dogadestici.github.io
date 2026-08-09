@@ -16,16 +16,15 @@
     />
     <style>
       .academic-row {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px;
-        justify-content: center;
         margin-top: 50px;
         margin-bottom: 80px;
       }
       .academic-card {
-        flex: 1 1 300px;
-        max-width: 380px;
+        min-width: 0;
+        max-width: none;
         display: block;
         position: relative;
         text-decoration: none;
@@ -75,6 +74,58 @@
       body.dark-mode .quote-text {
         color: #ffffff !important;
       }
+
+      .academic-info-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 80px 20px;
+      }
+      .academic-section {
+        padding: 60px 0;
+        border-bottom: 2px solid var(--primary-accent);
+      }
+      .section-title-sub {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--primary-accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .text-block {
+        max-width: 850px;
+        margin: 0 auto;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        text-align: justify;
+      }
+      .fanzin-img-frame {
+        display: block;
+        width: 100%;
+        max-width: 850px;
+        height: auto;
+        max-height: 480px;
+        border: 3px solid var(--primary-accent);
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        object-fit: cover;
+        margin: 25px auto;
+      }
+      .fanzin-img-sub {
+        text-align: center;
+        font-style: italic;
+        color: var(--supportive-text-color);
+        margin-top: -10px;
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+      }
+      body.dark-mode .academic-section { border-bottom-color: #ffffff !important; }
+      body.dark-mode .section-title-sub,
+      body.dark-mode .text-block p,
+      body.dark-mode .fanzin-img-sub,
+      body.dark-mode .blog-date { color: #ffffff !important; }
+      body.dark-mode .fanzin-img-frame { border-color: #ffffff !important; }
     </style>
   </head>
 
@@ -91,8 +142,6 @@
               <li class="nav-item"><a href="index.html" class="nav-link">Anasayfa</a></li>
               <li class="nav-item"><a href="akademik.html" class="nav-link active">Akademik</a></li>
               <li class="nav-item"><a href="sosyal.html" class="nav-link">Sosyal</a></li>
-              <li class="nav-item"><a href="gezi.html" class="nav-link">Gezi</a></li>
-              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
               <li class="nav-item"><a href="index.html#contact" class="nav-link">İletişim</a></li>
               <li class="nav-item"><a href="en/akademik.html" class="nav-link">🇬🇧EN</a></li>
               <li class="nav-item">
@@ -119,7 +168,7 @@
 
     <div class="container">
       <div class="academic-row">
-        <a href="academic-info.html" class="academic-card" data-aos="fade-up" data-aos-delay="100">
+        <a href="academic-info.html" class="academic-card">
           <img src="img/works/erasmus.jpg" alt="Hakkımda & Vizyonum" class="card-bg-img" onerror="this.src='img/works/overleaf.jpeg'" />
           <div class="card-body">
             <h3>Hakkımda & Vizyonum</h3>
@@ -127,7 +176,7 @@
           </div>
         </a>
 
-        <a href="academic-projects.html" class="academic-card" data-aos="fade-up" data-aos-delay="200">
+        <a href="academic-projects.html" class="academic-card">
           <img src="img/works/overleaf.jpeg" alt="Güncel Çalışmalar" class="card-bg-img" />
           <div class="card-body">
             <h3>Güncel Çalışmalar & Linkler</h3>
@@ -135,11 +184,19 @@
           </div>
         </a>
 
-        <a href="academic-tools.html" class="academic-card" data-aos="fade-up" data-aos-delay="300">
+        <a href="academic-tools.html" class="academic-card">
           <img src="img/works/tool.jpg" alt="Araştırma Araçları" class="card-bg-img" onerror="this.src='img/works/overleaf.jpeg'" />
           <div class="card-body">
             <h3>Araştırma Araçları & Kaynaklar</h3>
             <p>Araştırmalarımdaki temel araçlar, yazılımlar ve dijital akademik kaynaklar.</p>
+          </div>
+        </a>
+
+        <a href="blog-akademik.html" class="academic-card">
+          <img src="img/works/akademik-blog.jpeg" alt="Akademik Blog" class="card-bg-img" />
+          <div class="card-body">
+            <h3>Akademik Blog & Araştırma Notları</h3>
+            <p>Ders notları, araştırma gündemi, makaleler ve matematik üzerine düşünceler.</p>
           </div>
         </a>
       </div>
@@ -160,4 +217,4 @@
     ></script>
     <script src="js/site.js"></script>
   </body>
-</html> 
+</html>

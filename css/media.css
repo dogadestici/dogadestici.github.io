@@ -191,6 +191,7 @@
   .academic-row {
     margin-top: 30px !important;
     margin-bottom: 50px !important;
+    grid-template-columns: 1fr !important;
   }
 
   .academic-card {
