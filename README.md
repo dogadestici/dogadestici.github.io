@@ -1,56 +1,67 @@
-# Simple Developer Portfolio Template
+# Doğa Destici — Kişisel Web Sitesi
 
-![Project Preview](portfolio_preview.jpg)
 
-## Description
+Doğa Destici'nin kişisel tanıtım ve akademik paylaşım sitesi. Tamamen statik HTML, CSS ve JavaScript ile geliştirilmiş, GitHub Pages üzerinde yayınlanan, iki dilli (TR/EN) bir portfolyo ve blog sitesidir.
 
-This is a very simple, but elegant responsive portfolio template built using plain JavaScript, HTML, and CSS. It’s designed to be easily customizable, allowing any developer to quickly create a personal portfolio site. Below you'll find detailed information about the features and how to use this template.
+## İçerik
 
-## Table of Contents
+- [Özellikler](#özellikler)
+- [Sayfa Yapısı](#sayfa-yapısı)
+- [Teknolojiler](#teknolojiler)
+- [Yerel Geliştirme](#yerel-geliştirme)
+- [Yayınlama](#yayınlama)
+- [Katkı](#katkı)
 
-- [Features](#features)
-- [Live Preview](#live-preview)
-- [Usage](#usage)
-- [Recent Updates](#recent-updates)
-- [License](#license)
+## Özellikler
 
-## Features
+- **İki dilli yapı (TR/EN):** `en/` klasöründeki İngilizce sayfalar, üst menüden 🇬🇧 EN ile geçiş yapılabilir.
+- **Dark mode:** `js/site.js` ile tüm sayfalarda çalışan açık/koyu tema geçişi; tercih `localStorage`'da saklanır.
+- **Duyarlı tasarım (responsive):** `css/media.css` ile mobil ve tablet uyumlu.
+- **AOS animasyonları:** Scroll üzerine giriş animasyonları (AOS kütüphanesi).
+- **Akademik araçlar:** `academic-tools.html` sayfasında kod blokları, tek tıkla kopyalama butonları ve arXiv aboneliği/filtreleme rehberleri.
+- **Yükleme performansı:** Tüm görseller boyutlandırılmış ve sıkıştırılmış; içerik görselleri `loading="lazy"` ile yüklenir.
 
-- Responsive Design
-- Single-page layout
-- Simple and customizable
-- PHP Mailer Integration
+## Sayfa Yapısı
 
-## Live Preview
+| Sayfa | Açıklama |
+| --- | --- |
+| `index.html` | Anasayfa |
+| `akademik.html` | Akademik bölümü girişi |
+| `academic-info.html` | Akademik bilgiler ve CV |
+| `academic-projects.html` | Akademik projeler |
+| `academic-tools.html` | Araştırma araçları ve kaynaklar |
+| `sosyal.html` | Sosyal faaliyetler |
+| `gezi.html`, `gezi-rotalar.html`, `gezi-erasmus.html` | Gezi ve Erasmus bölümleri |
+| `blog.html`, `blog-akademik.html`, `blog-sosyal.html` | Blog sayfaları |
+| `en/` | Tüm sayfaların İngilizce sürümleri |
 
-Check out the live preview of the Simple Developer Portfolio [here](https://hhlitval.github.io/simple-portfolio-template).
+## Teknolojiler
 
-## Usage
+- Saf HTML5, CSS3, JavaScript (harici framework yok)
+- [AOS](https://github.com/michalsnik/aos) — scroll animasyonları (CDN)
+- GitHub Pages — statik yayınlama
 
-To use this template, follow these steps:
+## Yerel Geliştirme
 
-1. **Clone the Repository**: 
-    ```bash
-    git clone https://github.com/hhlitval/simple-portfolio-template.git
-    ```
-2. **Customization**:
-   - Update `index.html` with your information.
-   - Modify `style.css` for custom styles.
-3. **Email Integration**:
-   To enable email functionality:
-   - Upload the project to a PHP-enabled server.
-   - Configure the `mail.php` file with your email credentials.
-4. **Deployment**:
-   - Host the project on a server that supports PHP for email functionality.
-   - **If hosting on GitHub Pages, note that email handling will not work, since GitHub Pages is a static hosting service**.
+Sunucu gerektirmez; dosyaları doğrudan tarayıcıda açabilirsiniz. İsterseniz basit bir yerel sunucu ile çalıştırın:
 
-## Recent Updates
+```bash
+python3 -m http.server 8000
+```
 
-- Refactored font sizes and styles for improved readability and balance.
-- Reworked animations for smoother transitions and a modern look.
-- Removed the preloader for a faster, simplified user experience.
-- Added [PHP Mailer](https://github.com/PHPMailer/PHPMailer) integration for email handling (requires a PHP-enabled server, not supported on GitHub Pages).
+Ardından `http://localhost:8000` adresini ziyaret edin.
 
-## License
+## Yayınlama
 
-This project is licensed under the MIT License.
+Site, `main` dalındaki dosyalardan GitHub Pages ile otomatik yayınlanır:
+
+1. Değişiklikleri `main` dalına push edin.
+2. Repo **Settings → Pages** bölümünde kaynak olarak `main` dalının seçili olduğundan emin olun.
+3. Site `https://dogadestici.github.io/` adresinde yayına alınır.
+
+## Katkı
+
+- JS mantığı `js/site.js` (dark mode, mobil menü) ve `js/main.js` (sticky header, scroll aktifi) dosyalarında toplanmıştır.
+- Stil değişiklikleri için `css/main.css`, `css/media.css` ve `css/reset.css`.
+- Görsel eklerken optimize edilmiş (maks. 1600px, JPEG kalite ~80) ve `loading="lazy"` içeren `<img>` etiketi kullanın.
+- Yeni sayfa eklerken hem TR hem `en/` sürümünü oluşturun.
