@@ -178,8 +178,14 @@
 
   .resource-accordion__summary,
   .academic-accordion__summary {
+    gap: 10px;
     padding: 17px 18px;
     font-size: 1rem;
+  }
+
+  .academic-accordion__date {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
   }
 
   .resource-accordion__content,

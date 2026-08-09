@@ -657,6 +657,21 @@ a:hover {
   list-style: none;
 }
 
+.academic-accordion__title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.academic-accordion__date {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: rgba(17, 17, 17, 0.5);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
 .resource-accordion__summary::-webkit-details-marker,
 .academic-accordion__summary::-webkit-details-marker {
   display: none;
@@ -727,6 +742,10 @@ body.dark-mode .academic-accordion__summary,
 body.dark-mode .resource-accordion__content,
 body.dark-mode .academic-accordion__content {
   color: #ffffff;
+}
+
+body.dark-mode .academic-accordion__date {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 body.dark-mode .resource-accordion__content,

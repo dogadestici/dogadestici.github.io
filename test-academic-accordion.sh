@@ -26,6 +26,21 @@ assert_contains() {
   }
 }
 
+assert_order() {
+  local first_pattern="$1"
+  local second_pattern="$2"
+  local file="$3"
+  local first_line
+  local second_line
+
+  first_line="$(rg -n -m 1 --fixed-strings "$first_pattern" "$root_dir/$file" | cut -d: -f1)"
+  second_line="$(rg -n -m 1 --fixed-strings "$second_pattern" "$root_dir/$file" | cut -d: -f1)"
+  if [[ -z "$first_line" || -z "$second_line" || "$first_line" -ge "$second_line" ]]; then
+    printf 'Expected %s before %s in %s\n' "$first_pattern" "$second_pattern" "$file" >&2
+    exit 1
+  fi
+}
+
 for file in academic-tools.html en/academic-tools.html; do
   assert_count 5 'class="resource-accordion"' "$file"
   assert_contains 'resource-accordion__summary' "$file"
@@ -40,12 +55,25 @@ assert_contains 'arXiv - Subscription' en/academic-tools.html
 assert_contains 'arXiv - Python Filtering' en/academic-tools.html
 
 for file in blog-akademik.html en/blog-akademik.html; do
-  assert_count 1 'class="academic-accordion"' "$file"
+  assert_count 2 'class="academic-accordion"' "$file"
   assert_contains 'academic-accordion__summary' "$file"
+  assert_contains 'id="penrose-singularities"' "$file"
   assert_contains 'id="alpoge-jacobian"' "$file"
+  assert_count 2 'class="academic-accordion__date"' "$file"
+  assert_contains 'datetime="2026-08-08"' "$file"
+  assert_contains 'datetime="2026-08-01"' "$file"
+  assert_contains '08.08.2026' "$file"
+  assert_contains '01.08.2026' "$file"
+  assert_contains 'id="penrose-ref10"' "$file"
+  assert_order 'id="penrose-singularities"' 'id="alpoge-jacobian"' "$file"
 done
+
+assert_contains 'İyi ki Doğdun Sir Roger Penrose' blog-akademik.html
+assert_contains 'Happy Birthday, Sir Roger Penrose' en/blog-akademik.html
 
 assert_contains '.resource-accordion' css/main.css
 assert_contains '.academic-accordion' css/main.css
+assert_contains '.academic-accordion__date' css/main.css
+assert_contains '.academic-accordion__date' css/media.css
 
 printf 'Academic accordion checks passed.\n'
