@@ -66,6 +66,10 @@ for file in blog-akademik.html en/blog-akademik.html; do
   assert_contains '01.08.2026' "$file"
   assert_contains 'id="penrose-ref10"' "$file"
   assert_order 'id="penrose-singularities"' 'id="alpoge-jacobian"' "$file"
+  assert_contains 'window.MathJax' "$file"
+  assert_contains 'inlineMath' "$file"
+  assert_contains 'src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"' "$file"
+  assert_order 'window.MathJax' 'src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"' "$file"
 done
 
 assert_contains 'İyi ki Doğdun Sir Roger Penrose' blog-akademik.html
