@@ -75,6 +75,23 @@ done
 assert_contains 'İyi ki Doğdun Sir Roger Penrose' blog-akademik.html
 assert_contains 'Happy Birthday, Sir Roger Penrose' en/blog-akademik.html
 
+assert_count 2 'class="academic-accordion"' academic-projects.html
+assert_count 2 '<details' academic-projects.html
+assert_count 2 '<summary' academic-projects.html
+assert_contains 'id="scattering-dynamics"' academic-projects.html
+assert_contains 'id="schwarzschild-penrose"' academic-projects.html
+assert_contains 'class="academic-accordion__summary"' academic-projects.html
+assert_contains 'class="academic-accordion__content text-block"' academic-projects.html
+assert_contains 'class="academic-accordion__date"' academic-projects.html
+assert_contains 'datetime="2026-08"' academic-projects.html
+assert_contains 'datetime="2025-11"' academic-projects.html
+assert_contains '2026 AUGUST - CURRENT' academic-projects.html
+assert_contains '2025 NOVEMBER' academic-projects.html
+assert_contains 'Çıplak Tekillikler Etrafında Saçılma Dinamiği' academic-projects.html
+assert_contains 'Sena Yarar' academic-projects.html
+assert_contains 'ÇALIŞMA AŞAMASINDA' academic-projects.html
+assert_order 'id="scattering-dynamics"' 'id="schwarzschild-penrose"' academic-projects.html
+
 assert_contains '.resource-accordion' css/main.css
 assert_contains '.academic-accordion' css/main.css
 assert_contains '.academic-accordion__date' css/main.css

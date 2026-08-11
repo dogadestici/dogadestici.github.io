@@ -20,12 +20,6 @@
         margin: 0 auto;
         padding: 120px 20px 80px 20px;
       }
-      .research-card {
-        background: var(--gray-color);
-        border: 2px solid var(--primary-accent);
-        padding: 35px;
-        margin-bottom: 40px;
-      }
       .project-status {
         display: inline-block;
         background: var(--primary-accent);
@@ -40,17 +34,6 @@
       body.dark-mode .project-status {
         color: #000000 !important;
         background: #ffffff !important;
-      }
-      .research-card h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin: 0 0 15px 0;
-        color: var(--primary-accent);
-      }
-      .research-card p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        text-align: justify;
       }
       .collab-links {
         margin-top: 20px;
@@ -100,19 +83,40 @@
         </p>
       </div>
 
-      <div class="research-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="project-status">Çalışma Aşamasında / In Progress</div>
-        <h3>Conformal Compactification and Penrose Diagram of the Schwarzschild Spacetime</h3>
-        <p>
-          Çekya'daki Erasmus sürecimde başlattığım bu bağımsız araştırma projesi üzerinde aktif olarak çalışmaya devam etmekteyim. Çalışma kapsamında, Schwarzschild karadelik uzay-zamanının nedensel yapısını diferansiyel geometrik metotlar yardımıyla inceliyor; Lorentzian manifoldlarında konform kompaktlaştırma (conformal compactification) tekniklerini uygulayarak sonsuz uzay-zaman sınırlarını sonlu bir Penrose diyagramı üzerinde haritalandırma üzerine odaklanıyorum.
-        </p>
-        <p style="margin-top: 15px; font-style: italic;">
-          <strong>Durum:</strong> Yakında çalışma notlarım ve proje çıktıları burada paylaşılacaktır.
-        </p>
-        <p style="font-size: 0.95rem; font-style: italic; margin-top: 20px; border-top: 2px dashed var(--primary-accent); padding-top: 15px;">
-          <strong>Not:</strong> Bu çalışma, herhangi bir akademik danışman (advisor) bağlılığı olmaksızın, tamamen bağımsız olarak yürüttüğüm bir araştırma projesidir. Dolayısıyla metodoloji, kaynak veya fikir paylaşımları benim için ekstra değerlidir.
-        </p>
-      </div>
+      <details id="scattering-dynamics" class="academic-accordion" data-aos="fade-up" data-aos-delay="100" aria-labelledby="scattering-dynamics-title">
+        <summary id="scattering-dynamics-title" class="academic-accordion__summary">
+          <span class="academic-accordion__title">Çıplak Tekillikler Etrafında Saçılma Dinamiği</span>
+          <time class="academic-accordion__date" datetime="2026-08">2026 AUGUST - CURRENT</time>
+        </summary>
+        <div class="academic-accordion__content text-block">
+          <div class="project-status">ÇALIŞMA AŞAMASINDA</div>
+          <p>
+            Sena Yarar ile birlikte yürüttüğümüz bu çalışma, çıplak tekillikler etrafındaki saçılma dinamiklerini incelemeye odaklanmaktadır.
+          </p>
+          <p>
+            Bu proje herhangi bir akademik danışmana bağlı olmadan, bağımsız olarak yürütülmektedir.
+          </p>
+        </div>
+      </details>
+
+      <details id="schwarzschild-penrose" class="academic-accordion" data-aos="fade-up" data-aos-delay="150" aria-labelledby="schwarzschild-penrose-title">
+        <summary id="schwarzschild-penrose-title" class="academic-accordion__summary">
+          <span class="academic-accordion__title">Conformal Compactification and Penrose Diagram of the Schwarzschild Spacetime</span>
+          <time class="academic-accordion__date" datetime="2025-11">2025 NOVEMBER</time>
+        </summary>
+        <div class="academic-accordion__content text-block">
+          <div class="project-status">ÇALIŞMA AŞAMASINDA</div>
+          <p>
+            Çekya'daki Erasmus sürecimde başlattığım bu bağımsız araştırma projesi üzerinde aktif olarak çalışmaya devam etmekteyim. Çalışma kapsamında, Schwarzschild karadelik uzay-zamanının nedensel yapısını diferansiyel geometrik metotlar yardımıyla inceliyor; Lorentzian manifoldlarında konform kompaktlaştırma (conformal compactification) tekniklerini uygulayarak sonsuz uzay-zaman sınırlarını sonlu bir Penrose diyagramı üzerinde haritalandırma üzerine odaklanıyorum.
+          </p>
+          <p style="margin-top: 15px; font-style: italic;">
+            <strong>Durum:</strong> Yakında çalışma notlarım ve proje çıktıları burada paylaşılacaktır.
+          </p>
+          <p style="font-size: 0.95rem; font-style: italic; margin-top: 20px; border-top: 2px dashed var(--primary-accent); padding-top: 15px;">
+            <strong>Not:</strong> Bu çalışma, herhangi bir akademik danışman (advisor) bağlılığı olmaksızın, tamamen bağımsız olarak yürüttüğüm bir araştırma projesidir. Dolayısıyla metodoloji, kaynak veya fikir paylaşımları benim için ekstra değerlidir.
+          </p>
+        </div>
+      </details>
 
       <div class="collab-box" data-aos="fade-up" data-aos-delay="200" style="margin-top: 20px; position: relative; z-index: 10;">
         <h4 style="font-size: 1.3rem; font-weight: bold; margin: 0 0 12px 0; color: var(--secondary-accent);">[Fikir Alışverişi & İletişim]</h4>
