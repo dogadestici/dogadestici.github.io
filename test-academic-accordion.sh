@@ -88,9 +88,28 @@ assert_contains 'datetime="2025-11"' academic-projects.html
 assert_contains '2026 AUGUST - CURRENT' academic-projects.html
 assert_contains '2025 NOVEMBER' academic-projects.html
 assert_contains 'Çıplak Tekillikler Etrafında Saçılma Dinamiği' academic-projects.html
+assert_contains 'Schwarzschild Uzay-Zamanının Konformal Kompaktlaştırılması ve Penrose Diyagramı' academic-projects.html
+assert_contains '2025 NOVEMBER - DEVAM EDİYOR' academic-projects.html
 assert_contains 'Sena Yarar' academic-projects.html
 assert_contains 'ÇALIŞMA AŞAMASINDA' academic-projects.html
 assert_order 'id="scattering-dynamics"' 'id="schwarzschild-penrose"' academic-projects.html
+
+assert_count 2 'class="academic-accordion"' en/academic-projects.html
+assert_count 2 '<details' en/academic-projects.html
+assert_count 2 '<summary' en/academic-projects.html
+assert_contains 'id="scattering-dynamics"' en/academic-projects.html
+assert_contains 'id="schwarzschild-penrose"' en/academic-projects.html
+assert_contains 'class="academic-accordion__summary"' en/academic-projects.html
+assert_contains 'class="academic-accordion__content text-block"' en/academic-projects.html
+assert_contains 'class="academic-accordion__date"' en/academic-projects.html
+assert_contains 'datetime="2026-08"' en/academic-projects.html
+assert_contains 'datetime="2025-11"' en/academic-projects.html
+assert_contains '2026 AUGUST - CURRENT' en/academic-projects.html
+assert_contains '2025 NOVEMBER' en/academic-projects.html
+assert_contains 'Scattering Dynamics Around Naked Singularities' en/academic-projects.html
+assert_contains 'Sena Yarar' en/academic-projects.html
+assert_contains 'IN PROGRESS' en/academic-projects.html
+assert_order 'id="scattering-dynamics"' 'id="schwarzschild-penrose"' en/academic-projects.html
 
 assert_contains '.resource-accordion' css/main.css
 assert_contains '.academic-accordion' css/main.css
