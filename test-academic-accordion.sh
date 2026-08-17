@@ -26,6 +26,15 @@ assert_contains() {
   }
 }
 
+assert_not_contains() {
+  local pattern="$1"
+  local file="$2"
+  if rg -q --fixed-strings "$pattern" "$root_dir/$file"; then
+    printf 'Unexpected %s in %s\n' "$pattern" "$file" >&2
+    exit 1
+  fi
+}
+
 assert_order() {
   local first_pattern="$1"
   local second_pattern="$2"
@@ -40,6 +49,23 @@ assert_order() {
     exit 1
   fi
 }
+
+assert_contains 'href="mailto:dogaadestici@gmail.com"' index.html
+assert_contains 'dogaadestici@gmail.com' en/index.html
+for file in \
+  en/academic-info.html \
+  en/academic-projects.html \
+  en/akademik.html \
+  en/gezi-erasmus.html \
+  en/gezi-rotalar.html \
+  en/gezi.html; do
+  assert_contains 'mailto:dogaadestici@gmail.com' "$file"
+done
+
+if rg -l --fixed-strings 'dogadestici@gmail.com' "$root_dir" --glob '*.html' >/dev/null; then
+  printf 'Found the outdated email address in HTML files\n' >&2
+  exit 1
+fi
 
 for file in academic-tools.html en/academic-tools.html; do
   assert_count 5 'class="resource-accordion"' "$file"
@@ -85,12 +111,13 @@ assert_contains 'class="academic-accordion__content text-block"' academic-projec
 assert_contains 'class="academic-accordion__date"' academic-projects.html
 assert_contains 'datetime="2026-08"' academic-projects.html
 assert_contains 'datetime="2025-11"' academic-projects.html
-assert_contains '2026 AUGUST - CURRENT' academic-projects.html
-assert_contains '2025 NOVEMBER' academic-projects.html
+assert_contains 'AĞUSTOS 2026 - GÜNCEL' academic-projects.html
+assert_contains 'KASIM 2025 - DEVAM EDİYOR' academic-projects.html
 assert_contains 'Çıplak Tekillikler Etrafında Saçılma Dinamiği' academic-projects.html
 assert_contains 'Schwarzschild Uzay-Zamanının Konformal Kompaktlaştırılması ve Penrose Diyagramı' academic-projects.html
-assert_contains '2025 NOVEMBER - DEVAM EDİYOR' academic-projects.html
-assert_contains 'Sena Yarar' academic-projects.html
+assert_contains 'KASIM 2025 - DEVAM EDİYOR' academic-projects.html
+assert_contains 'bağımsız araştırma projesi' academic-projects.html
+assert_not_contains 'Sena Yarar' academic-projects.html
 assert_contains 'ÇALIŞMA AŞAMASINDA' academic-projects.html
 assert_order 'id="scattering-dynamics"' 'id="schwarzschild-penrose"' academic-projects.html
 
@@ -104,10 +131,11 @@ assert_contains 'class="academic-accordion__content text-block"' en/academic-pro
 assert_contains 'class="academic-accordion__date"' en/academic-projects.html
 assert_contains 'datetime="2026-08"' en/academic-projects.html
 assert_contains 'datetime="2025-11"' en/academic-projects.html
-assert_contains '2026 AUGUST - CURRENT' en/academic-projects.html
-assert_contains '2025 NOVEMBER' en/academic-projects.html
+assert_contains 'AUGUST 2026 - CURRENT' en/academic-projects.html
+assert_contains 'NOVEMBER 2025 - ONGOING' en/academic-projects.html
 assert_contains 'Scattering Dynamics Around Naked Singularities' en/academic-projects.html
-assert_contains 'Sena Yarar' en/academic-projects.html
+assert_contains 'independent research project' en/academic-projects.html
+assert_not_contains 'Sena Yarar' en/academic-projects.html
 assert_contains 'IN PROGRESS' en/academic-projects.html
 assert_order 'id="scattering-dynamics"' 'id="schwarzschild-penrose"' en/academic-projects.html
 
